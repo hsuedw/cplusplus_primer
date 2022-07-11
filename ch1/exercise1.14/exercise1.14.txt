@@ -1,0 +1,2 @@
+Usually, when we know the repeat times, for-loop is a good choice.
+Otherwise, while-loop is better.
