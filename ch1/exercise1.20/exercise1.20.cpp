@@ -8,7 +8,7 @@ int main()
     std::cout << "Please enter the sales record: " << std::endl;
     // read ISBN, number of copies sold, and sales price
     while (std::cin >> book) {
-        std::cout << "ISBN, numberof copies sold, and total revenue, and average price: ";
+        std::cout << "ISBN, number of copies sold, and total revenue, and average price: ";
         std::cout << book << std::endl;
     }
 
