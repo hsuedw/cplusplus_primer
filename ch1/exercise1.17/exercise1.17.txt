@@ -1,0 +1,3 @@
+If all the input values are the same, then the if block will always be run and the else block won't be run. After the input operator reads the EOF, the program print only one message that indicates the consecutive occurence times of the repeated value.
+
+If there is no consecutively duplicated values in the input, the if block won't be run and the else block will always be run.
