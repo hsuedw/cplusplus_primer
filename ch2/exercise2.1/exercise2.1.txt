@@ -1,0 +1,3 @@
+The types int, short, long and long long are all signed integers. We obtain the corresponding unsigned type by adding unsigned to the type, such as unsigned long. The C++ specification specifies the minimum sizes for each integer type. The minimum size for int, short long and long long are 16 bits, 16 bits, 32 bits and 64 bits, respectively. However, compliers are allowed to use larger sizes for these types.
+The integral types may be signed or unsigned. A signed type represents negative or positive numbers (including zero); an unsigned type represents only values greather than or equal to zero.
+Typically, floats are represented in 32 bits and doubles in 64 bits. The float and double types typically yield about 7 and 16 significant digits, repectively.
