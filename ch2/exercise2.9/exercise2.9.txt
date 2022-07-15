@@ -1,0 +1,27 @@
+(a) std::cin >> int input_value;
+    This statement will have error from compiler.
+
+    How to correct?
+    int input_value;
+    std::cin >> input_value;
+
+(b) int i = { 3.14 };
+    This declaration will have error from compiler, because the initializer
+    leads to the loss of information.
+
+    How to correct?
+    double i = {3.14};
+
+(c) double salay = wage = 9999.99;
+    This statement will have error from compiler.
+
+    How to correct?
+    double salay = 9999.99;
+    double wage = salay;
+
+(d) int i = 3.14;
+    This declaration may have waring from the compiler. The executable file
+    may be created. However, the fraction part will be truncated.
+
+    How to correct?
+    double i = 3.14;
