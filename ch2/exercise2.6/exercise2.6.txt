@@ -1,0 +1,17 @@
+
+int month = 9, day = 7;
+ ==> 9 and 7 are decimal literals.
+
+int month = 09, day = 07;
+ ==> Literals begins with a 0 are octal integers.
+     9 is not a valid octal digit, so the declaration statement 
+     introduces a compiler error.
+
+$ make clean all
+rm -rf exercise2.6
+g++ exercise2.6.cpp -o exercise2.6
+exercise2.6.cpp:4:18: error: invalid digit "9" in octal constant
+    4 |     int month2 = 09, day2 = 07;
+      |                  ^~
+make: *** [Makefile:2: all] Error 1
+
