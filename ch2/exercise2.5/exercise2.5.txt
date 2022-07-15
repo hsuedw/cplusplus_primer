@@ -1,0 +1,20 @@
+(a) 'a':  a literal with type char
+    L'a': a literal with type wide char (wchar_t)
+    "a":  a literal with type const char array (string)
+    L"a"  a literal with tyeo const wchar_t array
+
+(b) 10:   decimal integer (signed)
+    10u:  decimal integer (unsignedl)
+    10L:  decimal long integer (signed)
+    10uL: decimal long integer (unsigned)
+    012:  octal integer
+    0xC:  hexidecimal integer
+
+(c) 3.14:  double floating-point number
+    3.14f: single floating-point number
+    3.14L: long double floating-point number
+
+(d) 10:    decimal integer (signed)
+    10u:   decimal integer (unsignedl)
+    10.:   double floating-poing number
+    10e-2: double floating-poing number
