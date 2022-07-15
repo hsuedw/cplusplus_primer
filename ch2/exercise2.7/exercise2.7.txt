@@ -1,0 +1,4 @@
+(a) a string literal (an array of constant chars)
+(b) long double floating-point literal
+(c) float floating-point literal
+(d) 3.14L long double floating-point literal
