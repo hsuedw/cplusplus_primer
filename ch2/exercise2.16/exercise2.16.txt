@@ -1,0 +1,19 @@
+int i = 0, &r1 = i;
+double d = 0, &r2 = d;
+
+(a) r2 = 3.14159;
+    This assignment is valid.
+    Because r2 is a reference bound to d whose type is double, this assignment assigns 3.14159 to d.
+
+(b) r2 = r1;
+    This assignment is valid.
+    Although r2 refers to double object and r1 refers to an int object, we read the value of i, which is 0 (int), and promote it to double and assigned it to the object to which r2 bound.
+
+(c) i = r2;
+    This assignment might have waring message from the compiler.
+    r2 is a refernce to d which is a double object. In this assignment, we read the value of d and assign it to i which is an int object. This may cause truncation of information.
+
+(d) r1 = d;
+    This assignment might have waring message from the compiler.
+    r1 is a refernce to 1 which is an int object. In this assignment, we read the value of d and assign it to i. This may cause truncation of information.
+
