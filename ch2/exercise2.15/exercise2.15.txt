@@ -1,0 +1,18 @@
+(a) int ival = 1.01;
+    This definition is invalid.
+    Because the type of ival is int, the initializer must be an integer rather than a double floating point number.
+    This definition can be fixed as following.
+    int ival = 1;
+
+(b) int &rval1 = 1.01;
+    This definition is invalid.
+    Because, in C++, a reference can be bound to only an object, not to a literal.
+
+(c) int &rval2 = ival;
+    If the type of ival is int, this definition is valid. Otherwise, it is invalid.
+    The type of a reference and the object to which the refernce refers mus match exactly.
+
+(d) int &rval3;
+    This definition is invalid.
+    A reference must be initialized.
+    When we define a reference, instead of copying the initializer's value, we bind the reference to its initializer. Once initialized, a reference remains bound to its initial object. There is no way to rebind a reference to refer to a different object. Because there is no way to rebind a reference, referencs must be initialized.
