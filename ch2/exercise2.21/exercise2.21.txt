@@ -1,0 +1,11 @@
+int i = 0;
+
+(a) double *dp = &i;
+    This definition is illegal, because it tries to initalize a pointer to double to the address of a int.
+
+(b) int *ip = i;
+    This definition is illegal, because it tries to initilize a pointer to int to the value of an int variable. ip must be initialized to the address of an int object.
+
+(c) int *p = &i;
+    This definition is legal.
+    
