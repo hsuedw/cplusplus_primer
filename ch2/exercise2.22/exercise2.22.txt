@@ -1,0 +1,7 @@
+Assuming p is a pointer ot int, explain the following code;
+
+if (p) // If p points to a valid object, this if-clause is evaluated to be true.
+       // If p holds an invalid address, the result is undefined.
+       // If p is assigned nullptr, this if-clause is evaluated to be false.
+
+if (*p) // If the value of the object to which p points to is nonzero, this if-clause evaluated to be true. Otherwise, false.
