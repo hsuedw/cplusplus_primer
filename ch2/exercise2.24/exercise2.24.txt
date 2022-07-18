@@ -1,0 +1,7 @@
+Why is the initialization of p legal but that of lp illegal?
+int i = 42;
+void *p = &i;
+long *lp = &i
+
+Because p is a void* pointer, it can hold the address of any object. Therefore, the initialization of p is legal. 
+Because lp is pointer to long but i is an int object, the address of i cannot be initialized to lp.
