@@ -1,0 +1,12 @@
+(a) int* ip, i, &r = i;
+    ip is a pointer to int. It is not initialized.
+    i is int. It is not initialized.
+    r is a reference which refers to variable i.
+
+(b) int i, *ip = 0;
+    i is int. It is not initialized.
+    ip is a pointer to int. It is initialized to 0.
+
+(c) int* ip, ip2;
+    ip is a pointer to int. It is not initialized.
+    ip2 is an int. It is not initialized.
