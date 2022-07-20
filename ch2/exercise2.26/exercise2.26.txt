@@ -1,0 +1,12 @@
+(a) const int buf;
+    This statement is illegal, because buf is a const int but it is not initialized.
+
+(b) int cnt = 0;
+    This statement is legal.
+
+(c) const int sz = cnt;
+    This statement is legal. 
+
+(d) ++cnt; ++sz;
+    ++cnt is legal because it is not a const object.
+    ++sz is illegal because it is a const object.
