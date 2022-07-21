@@ -1,0 +1,2 @@
+v2 and p3 have top-level const.
+p2 and r2 have low-level const.
