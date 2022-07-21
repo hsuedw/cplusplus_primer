@@ -1,0 +1,26 @@
+Which of the following initializations are legal? Eplain why.
+
+(a) int i = -1, &r = 0;
+    The initialization for variable i is legal. It is initialized as -1.
+    The initialization for reference r is illegal. Because a reference is not an object, it cannot refer to a literal.
+
+(b) int *const p2 = &i2;
+    p2 is const pointer which always points to the int object when p2 is intialized. If i2 is an int object, this is a legal initialization.
+
+(c) const int i = -1, &r = 0;
+    The initialization for i is legal. It is initialized as -1 and i is a const int object.
+    The initialization for r is legal. Because r is a const reference which refers to an int object, it can refer to a literal.
+
+(d) const int *const p3 = &i2;
+    p3 is a const pointer which points to the const int object when p3 is initialized. If i2 is a const int object, this initialization is legal.
+
+(e) const int *p1 = &i2;
+    p1 is a pointer which points to a const int object. If i2 is a const int object, this initialization is legal.
+    However, p1 can point to different const int objects.
+
+(f) const int &const r2;
+    r2 is a reference. A reference is not an object, so it doesn't make sense that modify it as const.
+
+(g) const int i2 = i, &r = i;
+    i2 is a const int object. If i is an int object, it is legal to use the value of i to initialize i2.
+    r is const reference which referes to an int object. If i is an int object, it is a legal initialization.
