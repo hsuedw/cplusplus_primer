@@ -1,0 +1,24 @@
+Explain the following definitions. Identify any that are illegal.
+
+(a) int i, *const cp;
+    This definition is illegal. It defines two variables.
+    i is an int object and it is not initialized. This part is legal.
+    cp is const pointer which points to an int object but it is not initialized. As other const objects, a const pointer must be initialized. This part is illegal.
+
+(b) int *p1, *const p2;
+    This definition is illegal. It defines two variables.
+    p1 is a pointer which points to an int object. This part is legal.
+    p2 is const pointer which points to an int object but it is not initialized. As other const objects, a const pointer must be initialized. This part is illegal.
+
+(c) const int ic, &r = ic;
+    This definition is illegal.
+    ic is a const int object but it is not initialized. Therefore, this definition is illegal.
+
+(d) const int *const p3;
+    This definition is illegal.
+    p3 is a const pointer which points to a const int object. However, p3 is not initialized.
+
+(e) const int *p;
+    This definition is legal.
+    p is a point which points to a const int object. p can points to different const int objects.
+    Although it is not initialize, the programmer can assign an address of a const int objects latter.
