@@ -1,0 +1,26 @@
+* r1 = v2;
+  This assigment is legal.
+  r1 is are reference which refers to an int object. r1 is initialized to v1.
+  v1 and v2 have the same type and const level, so this assignment is legal
+
+* p1 = p2;
+  p1 is a pointer which points to an int object, so it doesn't have top-level const and low-level const.
+  p2 is a pointer which points to a const object, so it has low-level const.
+  Therefore, the low-level const of p1 and p2 are not match and we cannot convert const to non-const. This assignment is not legal.
+
+* p2 = p1
+  p2 is a pointer which points to a const object, so it has low-level const.
+  p1 is a pointer which points to an int object, so it doesn't have top-level const and low-level const.
+  Although the low-level const of p1 and p2 are not match, we can convert non-const to const.
+  This assignment is illegal.
+
+* p1 = p3;
+  p1 is a pointer which points to an int object, so it doesn't have top-level const and low-level const.
+  p3 is a const pointer which points to a const int object, so it has top-level const and low-level const.
+  Therefore, the low-level const of p1 and p3 are not match and we cannot convert const to non-const. This assignment is not legal.
+
+* p2 = p3;
+  p2 is a pointer which points to a const object, so it has low-level const.
+  p3 is a const pointer which points to a const int object, so it has top-level const and low-level const.
+  The low-level const of p2 and p3 are matched and we can ignore the top-level const of the copied object, which is p3.
+  Therefore, this assignment is legal.
