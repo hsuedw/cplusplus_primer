@@ -1,0 +1,23 @@
+Using the variables in the previous exercise, which of the following assignments are legal? Explain why.
+
+(a) i = ic;
+    i is an int object while ic is a const int object. We can assign the value of a const object to a non-const object.
+    Therefore, this assignument is legal.
+
+(b) p1 = p3;
+    p1 is a pointer which points to an int object while p3 is a const pointer which points to a const int object.
+    We cannot use p1 to point to the const object which is pointed by p3, so this assignment is illegal.
+
+(c) p1 = &ic;
+    p1 is a pointer which points to an int object while ic is a const int object.
+    We cannot use p1 to point to ic, so this assignment is illegal.
+
+(d) p3 = &ic;
+    p3 is const pointer which points to a const int object, so it must be initalized and cannot be assigned to the address of another object. Therefore, this definition is illegal.
+
+(e) p2 = p1;
+    p2 is const pointer which points to an int object, so it must be initalized and cannot be assigned to the address of another object. Therefore, this definition is illegal.
+
+(f) ic = *p3;
+    ic is a const int object, so it must be initialized and cannot be assigned the value of another object.
+    Therefore, this assignment is illegal.
