@@ -1,0 +1,10 @@
+Is the following code legal or not? If not, who might you make it legal?
+
+int null = 0, *p = null;
+
+This code is illegal, because p is a pointer to an int object and it must be initialized by the address of an int object or nullptr (literal).
+We can fix this code as following ways.
+
+int null = 0, *ptr = nullptr;
+int null = 0, *ptr = 0;
+int null = 0, *ptr = &null;
