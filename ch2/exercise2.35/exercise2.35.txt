@@ -1,0 +1,31 @@
+Determin the types deduced in each of the following definitions. Once you've figured out the types, write a program to see whether you were correct.
+
+const int i = 42;
+ /*
+  * i has type const int. Because the const indicates the object, which is i, is a const int object, the const is a top-level const.
+  */
+
+auto j = i;
+  /*
+   * Because the top-level const is ignored, the auto-deduced type for i is int.
+   * Therefore, j has type 'int'.
+   */ 
+
+const auto &k = i;
+  /*
+   * When we ask for a reference to an auto-deduced type, top-level const in the initializer is not ignored.
+   * Therefore, k is a reference to const int (const int &).
+   */
+
+
+auto *p = &i;
+  /*
+   * The auto-deduced type for &i is pointer to const int (const int *).
+   * Therefore, p has type 'const int *'.
+   */
+
+const auto j2 = i, &k2 = i;
+  /*
+   * The auto-deduced type for i is int.
+   * Therefore, j2 is 'const int' and k2 is 'const int &'.
+   */
