@@ -1,0 +1,29 @@
+Using the variable definitions from this section, determine what happens in each of these assignments:
+
+int i = 0, &r = i;
+auto a = r;   // a is an int (r is an alias for i, which has type int)a
+
+const int ci = i, &cr = ci;
+auto b = ci;  // b is an int (top-level const in ci is droped)
+auto c = cr;  // c is an int (cr is an alias for ci whose const is top-level)
+auto d = &i;  // d is an int * (& of an int object is int *)
+auto e = &ci; // e is const int * (& of a const object is low-level const)
+auto &g = ci; // g is a const int & that is bound to ci
+
+* a = 42;
+  a is an int object, so this assignment is legal.
+
+* b = 42;
+  b is an int object, so this assignment is legal.
+
+* c = 42;
+  c is an int object, so this assignment is legal.
+
+* d = 42;
+  d is a pointer to int and must be assigned by the address of another int object, so this assignment is illegal.
+
+* e = 42;
+  e is a pionter to const int (const int *), so this assignment is illegal.
+
+* g = 42;
+  g has type const int & that is bound to ci, so we cannot use g to assigne a value to ci. This assignment is illegal.
