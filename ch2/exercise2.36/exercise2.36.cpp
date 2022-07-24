@@ -9,9 +9,11 @@ int main(int argc, char *argv[])
     std::cout << "1.2 The type of b: " << typeid(b).name() << ", b = " << b << std::endl;
 
     decltype(a) c = a;    // c has type int and it is initialized to 3, which is the value of a.
+    //decltype(a) c;        // OK. But c is not initialized.
     std::cout << "2 The type of c: " << typeid(c).name() << ", c = " << c << std::endl;
 
-    decltype((b)) d = a;  // d is int & and it refers to a.
+    decltype((b)) d = a; // d is int & and it refers to a.
+    //decltype((b)) d;     // Error! d is a reference to int, so it must be initialized.
     std::cout << "3 The type of d: " << typeid(d).name() << ", d = " << d << std::endl;
 
     std::cout << "4.1 c = " << c << std::endl;
