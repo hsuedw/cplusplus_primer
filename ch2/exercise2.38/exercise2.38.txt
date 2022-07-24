@@ -1,0 +1,28 @@
+The auto type specifier let the compiler to deduce the type from the initializer in a definition and use the type of the defined variable will be the deduced type. If the initializer is an expression, the expression must be evaluated first and then the compiler will deduce the type from the result of the expression.
+The decltype returns the type of its operand. If its operand is an expression, the compiler analyze the expression to determine its type but does not evaluate the expression.
+
+    // the type of item is deduced from the type of the result of adding val1 and val2.
+    // item is initialized to the result of val1 + val2
+    auto item = val1 + val2;
+
+    // sum has whatever type f returns but the compiler doesn't call f.
+    decltype(f()) sum = x;
+
+The type that the compiler infers for auto is not always exactly the same as the initializer's type. Instead, teh compiler adjusts the type to conform to normal initialization rules. auto ordinarily ignores top-level consts.
+When we use a reference as an initializer, the initializer is the corresponding object. The compiler uses that object's type for auto's type deduction.
+When the expression to which we apply decltype is a variable, decltype returns the type of that variable, including top-level const and references.
+
+    int i = 0;
+    const int ci = i, &cr = ci;
+    auto b = ci; // b is an int (top-level const in ci is dropped)
+    auto c = cr; // c is an int (cr is an alias for ci whose const is top-level)
+
+    decltype(ci) x = 0; // x has type const int.
+    decltype(cr) y = x; // y has type const int & and it is bound to x.
+
+Another importance difference between decltype and auto ist that the deduction done y decltype depends on the form of its given expression. Whe we apply decltype to a variable without any parentheses, we get the type of that variable.
+If we wrap the variable's name in one or more sets of parantheses, the compiler will evaluate the operand as an expression. A variable is an expression that can be the left-hand side of an assignment. As a result, decltype on such an expression yields a reference.
+
+    // decltype of a parenthesize variable is always a reference
+    decltype((i)) d; // error: d is int& and must be initialized
+    decltype(i) e;   // ok: e is an (uninitalized) int
