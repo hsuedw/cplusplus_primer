@@ -1,0 +1,8 @@
+
+In the following code, determine the type of each variable and the value each variable has when the code finishes:
+
+    int a = 3, b = 4;     // a and b have type int. a and b are initialized to 3 and 4, repectively.
+    decltype(a) c = a;    // c has type int and it is initialized to 3, which is the value of a.
+    decltype((b)) d = a;  // d is int & and it refers to a.
+    ++c;                  // c will become 4
+    ++d;                  // a will become 4
