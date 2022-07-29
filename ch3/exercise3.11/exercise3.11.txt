@@ -1,0 +1,6 @@
+Is the following range for legal? If so, what is the type of c?
+
+    const string s = "Keep out!";
+    for (auto& c : s) { /* ... */ }
+
+The auto-deduced type for c will be 'const char&', so the characters in s are not allowed to be modified through the const reference c. Therefore, if the code implemented in body of the range for modifies the characters in s through c, this program is invalid and the compiler will generate error message (see exercise3.11-b.cpp)  If this program doesn't modify the characters in s through c, it works fine (see exercise3.11-a.cpp).
