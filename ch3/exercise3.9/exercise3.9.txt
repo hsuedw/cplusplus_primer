@@ -1,0 +1,12 @@
+Waht does the following program do? Is it valid? If not, why not?
+
+    string s;
+    cout << s[0] << endl;
+
+This program prints the first character of the string s.
+However, this program is invalid, because s is defined as an empty string
+and this program access s with an invalid index.
+The result is undefined to access a string with an index out of range.
+
+In my computer, exercise3.9.cpp works fine and doesn't break anything.
+Howerver, it doesn't mean it works fine on another platform as well.
