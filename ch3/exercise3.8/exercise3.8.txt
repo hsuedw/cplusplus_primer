@@ -1,0 +1,2 @@
+All the three approaches looks good for me.
+C++ provides greate flexiblity for programmers to implement their code.
