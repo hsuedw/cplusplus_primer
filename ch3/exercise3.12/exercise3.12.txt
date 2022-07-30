@@ -1,0 +1,11 @@
+(a) vector<vector<int>> ivec;
+
+    This vector definition is legal. Each element in ivec is a vector<int>. ivec is empty.
+
+(b) vector<string> svec = ivec;
+
+    If ivec has type vector<string>, this vection definition is legal. Otherwise, it is illegal.
+
+(c) vector<string> svec(10, "null");
+
+    This vector definition is legal. svec has ten strings which are initialized to "null".    
