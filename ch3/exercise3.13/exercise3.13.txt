@@ -22,6 +22,6 @@
 
     v6 has 10 empty strings.
 
-(h) vector<string> v7{10, "hi"};
+(g) vector<string> v7{10, "hi"};
 
     v7 has 10 strings. All the strings in v7 are initialized to "hi".
