@@ -1,0 +1,30 @@
+#include <string>
+#include <vector>
+#include <iostream>
+
+using std::string;
+using std::vector;
+using std::cin;
+using std::cout;
+using std::endl;
+
+int main()
+{
+    vector<int> nums;
+    int n;
+    while (cin >> n) {
+        nums.push_back(n);
+    }
+
+    for (int i = 0; i <= nums.size() / 2; ++i) {
+        if (i != nums.size() / 2) {
+            cout << nums[i] + nums[nums.size() - 1 - i] << " ";
+        } else if (nums.size() % 2 != 0) {
+            // We have odd number of elements and at the middle element, now.
+            cout << nums[i];
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
