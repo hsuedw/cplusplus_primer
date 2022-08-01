@@ -1,0 +1,6 @@
+* There the three ways to define a vector and give each 10 elements, each with teh value 42.
+    (1) vector<int> v1(10, 42);
+    (2) vector<int> v2 = {42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+    (3) vector<int> v2{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+
+  I personally prefer the first way, because it is an easy way to define a vector in this case.
