@@ -1,0 +1,12 @@
+Is the following program legal? If not, how might you fix it?
+
+    vector<int> ivec;
+    ivec[0] = 42;
+
+Answer:
+This program is illegal, because ivec is declared as an empty vector and the second line attempts to assign a value to the first element, which doesn't exist. The second line will cause buffer overflow error in run time. It is possible that the compiler might not detecte such error.
+I will use the push_back() member function to fix this issue. Therefore, one of the possible solutions could be the program shown as following.
+
+    vector<int> ivec;
+    ivec.push_back(42);
+
