@@ -1,0 +1,16 @@
+In the binary search program on page 112, why did we write mid = beg + (end - beg) / 2; instead of mid = (beg + end) / 2;?
+
+
+Because C++ doesn't define and implement addition for iterator, (beg + end) is illegal. If you use mid = (beg + end) / 2; in you code, the compiler will give you error messages.
+
+exercise3.26.cpp:15:21: error: no match for ‘operator+’ (operand types are ‘__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >’ and ‘__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >’)
+   15 |     auto mid = (beg + end) / 2;
+      |                 ~~~ ^ ~~~
+      |                 |     |
+      |                 |     __normal_iterator<[...],[...]>
+      |                 __normal_iterator<[...],[...]>
+
+
+Instead, C++ defines substraction for iterators. Therefore, we can substract two iterators so long as they refer to elements in, or one off the end of, the same vector or string. The result is the distance between the iterators. By distance we mean the amount by which we'd have to chang one iterator to get the other. The result type is a signed integral type named difference_type. 
+We can add (or substract) an integral value and an iterator. Doing so returns an iterator positioned forward (or backward) that many elements. When we add or substract an integral value and an iterator, the result must denote an element in the same vector (or string).
+Therefore, we can calculate the distance between beg and end by (end - beg). The result is a signed integer. Then, we can find the iterator denote the middle element by calculating 'beg + (end - beg) / 2'.
