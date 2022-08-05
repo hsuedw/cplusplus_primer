@@ -1,0 +1,16 @@
+Assuming txt_size is a function that takes no arguments and returns an int value, which of the following definitions are illegal? Explain why.
+
+unsigned buf_size = 1024;
+
+(a) int ia[buf_size];
+    This definition is illegal, becuase buf_size is not a constant expression.
+
+(b) int ia[4 * 7 - 14];
+    This definition is legal, because  4 * 7 - 14 is a constant expression and the result is 14, which is greater than 0.
+
+(c) int ia[txt_size()];
+    This definition is illegal, because test_size is not a constant expression.
+
+(d) char st[11] = "fundamental";
+    This definition is illegal, because the string literal is composed of 11 characters and the dimention of st musut be at least 12 to hold the 11 characters and the tailing null character.
+
