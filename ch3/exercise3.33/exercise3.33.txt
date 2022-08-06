@@ -1,0 +1,12 @@
+What would happen if we did not initialize the scores array in the program on page 116?
+
+If the score array is locally defined in a function and it is not properly initialized, it hold random values and the counting in the for loop will be incorrect. We can compile and run exercise3.33-a.cpp to verify the argument.
+
+    $ ./exercise3.33-a 
+    42 65 95 100 39 67 95 76 88 76 83 92 76 93
+    10 0 2261721981 22007 32191209 32663 2261721906 22009 2 4 2261721377 
+
+If the score array is defined globally, the compiler initializes all its elements to 0 and the counting in the for loop will be correct. We can compile and run exercise3.33-b.cpp to verify the argument.
+
+    $ ./exercise3.33-b 42 65 95 100 39 67 95 76 88 76 83 92 76 93
+    0 0 0 1 1 0 2 3 2 4 1 
