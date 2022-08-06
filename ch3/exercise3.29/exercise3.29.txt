@@ -1,0 +1,24 @@
+List some of the draw backs of using an array instead of a vector.
+
+An array is adata structure that is similar to the library vector type but offers a different trade-off between performance and flexity. Like a vector, an array is a container of unnamed objects of a single type that we access by positioin. Unlike a vector, arrays have fixed size; we cannot add element to an array. Becaus arrays have fixed size, they sometimes offer better run-time performance for specialized applications. However, that run-time advantage comes at the cost of lost flexibility.
+
+When we want to define an array, its demision must be known. If we want to change the demision of an array, we must define a new array and copy the data to the new array. However, we can use a vector to initialize a new vector.
+
+    int a[5] = {1, 2, 3, 4, 5};
+    int b[5] = a;  // Error
+
+    vector<int> vec1 = {1, 2, 3, 4, 5};
+    vector<int> vec2 = vec1;  // OK
+
+We also cannot assign one array another, but we can do that for vectors.
+
+    int a[5] = {1, 2, 3, 4, 5};
+    int b[5];
+    b = a; // Error
+
+    vector<int> vec1 = {6, 7, 8, 9, 10};
+    vector<int> vec2;
+    vec2 = vec1;  // OK
+
+By using vectors, we can use its member functions, such as size(). On the other hand, array just a data strusture and doesn't have member functions.
+
