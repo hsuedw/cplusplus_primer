@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 using std::cout;
 using std::endl;
@@ -12,7 +13,19 @@ int main()
         array[i] = i;
     }
 
+    int array2[sz];
+    for (size_t i = 0; i < sz; ++i) {
+        array2[i] = array[i];
+    }
+
+    cout << "values in array: "; 
     for (auto &x : array) {
+        cout << x << " ";
+    }
+    cout << endl;
+
+    cout << "values in array2: "; 
+    for (auto &x : array2) {
         cout << x << " ";
     }
     cout << endl;
