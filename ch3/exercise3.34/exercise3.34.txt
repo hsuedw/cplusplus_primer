@@ -1,0 +1,7 @@
+Given that p1 and p2 point to elements in the same array, what does the following code do? Are there values of p1 or p2 that make this code illegal?
+
+    p1 += p2 - p1;
+
+The code 'p1 += p2 - p1;' is equivalent to 'p1 = p1 + (p2 - p1);'. Then, we can write the codt to 'p1 = p2;'. Therefore, the programmer intends to make p1 point to the object to which p2 points.
+
+However, someone might think that 'p1 = p1 + p2 - p1' is equivalent to the original code. Actually, they are not equivalent. In 'p1 = p1 + p2 - p1', 'p1 + p2'  is evaluated first. We must be aware that addition for two pointers is not a legal operation. 
