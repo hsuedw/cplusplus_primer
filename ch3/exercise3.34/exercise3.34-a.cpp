@@ -10,10 +10,10 @@ int main()
 
     cout << "BEFORE: p1(" << p1 << "): " << *p1 << ", p2(" << p2 <<"): " << *p2 << endl;
 
-    //p1 += p2 - p1; // OK
+    p1 += p2 - p1; // OK
     //p1 = p1 + (p2 - p1);  // OK
  
-    p1 = p1 + p2 - p1; // ERROR
+    //p1 = p1 + p2 - p1; // ERROR
     /*
      * g++ exercise3.34.cpp -std=c++11 -Wall -Og -o exercise3.34
      * exercise3.34.cpp: In function ‘int main()’:
