@@ -1,0 +1,13 @@
+What does the following program do?
+
+    const char ca[] = {'h', 'e', 'l', 'l', 'o'};
+    const char *cp = ca;
+    while (*cp) {
+        cout << *cp << endl;
+	++cp;
+    }
+
+ca is a const array of characters. cp is a pointer to char and it is initialized to the address of the first element of ca. Then, the while loop uses cp as an iterator to traverse all the characters in ca. However, ca is not null terminated, so it is not sure whether the wile loop will stop at the last character. The while loop might keep running after the last character is printed.
+We can fix this issue by appending a null character at the end of ca.
+
+    const char ca[] = {'h', 'e', 'l', 'l', 'o', '\0'};
