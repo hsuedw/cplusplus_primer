@@ -1,0 +1,8 @@
+What does overflow mean? Show three expressions tha will overflow.
+
+Overflow happens when a value is computed that is outside the range of values that the type can represent.
+
+If the size of an int and unsigned int object is 4 bytes, the following expressions will overflow.
+int x = 2147483647 + 1;  // The result is -2147483648, instead of 2147483648.
+int y = -2147483648 - 1; // The result is 2147483647, instead of -2147483649.
+unsigned int z = 4294967295 + 1; // The result is 0, instead of 4294967296.
