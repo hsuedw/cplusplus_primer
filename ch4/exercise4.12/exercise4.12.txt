@@ -1,0 +1,4 @@
+Assuming i, j, and k are all ints, explain what i != j < k means.
+
+Because the precedence of < operation is higher than != operator, the expression is equivalent to i != (j < k). Therefore the sub-expression j < k will be evaluated first.
+
