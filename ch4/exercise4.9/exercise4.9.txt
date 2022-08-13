@@ -1,0 +1,9 @@
+Explain the behavior of the condition in the following if:
+
+    const char *cp = "Hello World";
+    if (cp && *cp)
+
+cp is a pointer to a c-style string and it is initialized by a string literal. We cannot modify the string to which cp points. 
+Because cp points store the address of the string literal, the left hand side of && operator is evaluated as true. Because *cp is evaluated as the character 'H', the right hand side of the && operator is evaluated as true. Therefore, the if statement is evaluated as true.
+
+In general, in the if statement, the left hand side (cp) of the && operator tests whether the cp pointer is nullptr. If it is not, the right hand side (*cp) of the && operator tests whether the string to which cp points is an empty string. For an empty string, the first character of the string is '\0'.
