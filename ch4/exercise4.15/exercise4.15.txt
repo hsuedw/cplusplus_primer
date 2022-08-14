@@ -1,0 +1,13 @@
+The followin assignment is illegal. Why? How would you correct it?
+
+    double dval;
+    int ival;
+    int *pi;
+    dval = ival = pi = 0;
+
+Because assignment is right associative, the right-most assignment (pi = 0) is evaluated first. The result type of the right-most assignmet is int *, which cannot be convert to the result type of the middle assignment. Because the left operand (ival) of the middle assignment is int, the result type of the middle assignment is int.
+
+I would like to correct the assignment as following.
+    dval = 0.0;
+    ival = 0;
+    pi = nullptr;
