@@ -1,0 +1,7 @@
+Explain what happens in each of the if tests:
+
+    if (42 = i)   // ERROR. Literals are rvalue.
+    if (i = 42)   // This if test is always true, because the result
+                  // of the assignment is 42 which will be converted
+                  // true. I guess the that this if test should  be
+                  // fixes as 'if (i == 42)'.
