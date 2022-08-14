@@ -1,0 +1,30 @@
+Although the following are legal, they probably do not behave as the porgrammer 
+expects. Why? Rewrite the expressions as you think they should be.
+
+(a) if (p = getptr() != 0)
+
+    Because the precedence of assignment is lower then inequality, the if test
+    is equivalent as the following.
+
+    if (p = (getptr() != 0))
+
+    In this way, the value of p is true or false. 
+
+    I guess the programmer wants the return value from getptr() to be assigned
+    to p. Then, check whether the value of p is 0. Therefore, I woulde like to
+    modify the if test as the following.
+
+    if ((p = getptr()) != 0)
+
+(b) if (i = 1024)
+
+    Because the condition in the if test is an assignment and 1024 is assigned 
+    to i, the if test is always true.
+
+    I guess the programmer wants to test if i is equal to 1024, I would like 
+    to modify the code as the following.
+
+    fix 1: if (i == 1024)
+    fix 2: if (i != 1024)
+    fix 3: if (i <= 1024)
+    fix 4: if (i >= 1024)
