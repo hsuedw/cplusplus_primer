@@ -1,0 +1,4 @@
+Explain the difference between prefix and postfix increment.
+
+The prefix increment (decrement) operator increases (decreases) its operand and yields the changed object ast its result. The postfix increment (decrement) operator increases (decreases) the teh operand but yield a copy of the original, unchanged value as its result.
+The prefix increment (decrement) operator returns the object itself as an lvalue. The postfix increment (decrement) operator returns a copy of the object's original value as an rvlaue.
