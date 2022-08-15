@@ -1,0 +1,18 @@
+Given that ptr points to an int, that vec is a vector<int>, and that  ival is an int, explain the behavior of each of these expressions. Which, if any, are likely to be incorrect? Why? How might each be corrected?
+
+(a) ptr != 0 && *ptr++
+    This expression means if ptr is not nullptr, then dereferences the value to which ptr points and increases ptr.
+    However, after this expression is evaluated, ptr contains an illegal memory address.
+    I guess the porgrammer might want to make sure ptr is not nullptr and increase the value of the object to which ptr points to. Therefore, I would modify this expression as following.
+
+    ptr != nullptr && (*ptr)++
+
+(b) ival++ && ival
+    If the value of ival is 0, then only the left operand (ival++) will be evaluated. The value of ival becomes 1 and the whole expression is evaluated as false.
+    If the value of ival is -1, then both operands of the logical AND operand will be evaluated. The value of ival becomes 0 and the whole expression will be evalutated as false.
+    If ival holds values other than 0 and -1, the value if ival will be increased and the whole expression will be evaluated as true.
+
+(c) vec[ival++] <= vec[ival]
+    Because the order of evaluation for both operands (vec[ival++] and vec[ival]) is undefined, the behavior of this expression is undefined. I would like to modify this expression as following.
+    vec[ival] <= vec[ival + 1], ++ival
+
