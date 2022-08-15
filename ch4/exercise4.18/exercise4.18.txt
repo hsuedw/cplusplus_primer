@@ -1,0 +1,10 @@
+What would happen if the while loop on page 148 that prints the elements from a vector used the prefix increment operator?
+
+auto pbeg = v.begin();
+while (pbeg != v.end() && *pbeg >= 0)
+    cout << *++pbeg << endl;
+
+Because the precedence of the prefix increment operator is higher than the dereference operator, *++pbeg is equivalent to *(++beg).
+Because the prefix increment operator increases its operand and returns the increased object as its result, the first object in v will not be printed.
+Moreover, the *++pbeg will dereference the object at one past the end of v. That is dereference an object that is out of the range of v. This is an error.
+Also, if there is no negative value in v, the while loop will keep dereferencing all the way beyond the end of v until pbeg refers to a negative value. This is a security issue.
