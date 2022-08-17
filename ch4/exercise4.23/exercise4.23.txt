@@ -1,0 +1,15 @@
+The following expression fails to compile due to operator precedence. 
+Using Table 4.12 (p. 166), explain why it fails. How would you fix it?
+
+    string s = "word";
+    string p1 = s + s[s.size() - 1] == 's' ? "" : "s";
+
+I guess the programmer wants to delete the tailing 's' character, if it exists.
+I would like to parenthesize the expression as following.
+
+    string p1 = s + (s[s.size() - 1] == 's' ? "" : "s");
+
+Because the precedence of the conditional operator (?:) is lower than the add
+operator (+), I parenthesize the expression as above.
+Because the precedence of the equality operator (==) is hight than the 
+conditional operator (?:), I don't need to add more parenthesis.
