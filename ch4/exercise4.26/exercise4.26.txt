@@ -1,0 +1,6 @@
+In our grading example in this section, what would happen if we used signed
+int as the type for quiz1?
+
+If the size of unsigned int on my machine is 4 bytes (32 bits) the result 
+is the same. If the size of unsigned int on machine is less than 4 bytes,
+there might be information loss.
