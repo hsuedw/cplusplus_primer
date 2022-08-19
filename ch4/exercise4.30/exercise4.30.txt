@@ -1,0 +1,27 @@
+Using Table 4.12 (p. 166), parenthesize the following expressions to match
+the default evaluation:
+
+    (a) sizeof x + y
+        If the programmer wants to calculate the size of the result of 
+        x + y, we need to add parenthesis in this expression.
+        Because the precedence of the sizeof operator is higher than the 
+        add operator, we need to parenthesize the expression as following.
+
+        sizeof(x + y)
+
+    (b) sizeof p->mem[i]
+        Because the precedence of member access operator (->) and subscript 
+        operator([]) is higher than the sizeof operator, we don't need to 
+        put any parenthesis to this expression.
+
+    (c) sizeof a < b
+        Because the precedence of the sizeof operator is higher than the 
+        less than operator (<), we need to parenthesize the expression as 
+        following.
+
+        sizeof (a < b)
+
+    (d) sizeof f()
+        The sizeof operator in this expression returns the size of the type
+        of the value returned by f(). We don't need to put any parenthesis 
+        in this expression.
