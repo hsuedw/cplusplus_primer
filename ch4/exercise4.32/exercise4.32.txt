@@ -1,0 +1,17 @@
+Explain the following loop.
+
+    constexpr int size = 5;
+    int ia[size] = {1, 2, 3, 4, 5};
+    for (int *ptr = ia, ix = 0;
+         ix != size && ptr != ia + size;
+         ++ix, ++ptr) { /* ... */ };
+
+ia is an array of int and it has five elements. ia is also initialized.
+In the first part of the for-loop header, we define ptr and ix. ptr is 
+a pointer to int and it is initialized to the first element of ia. ix is an
+int and it is initialized to 0.
+In the second part of the for-loop header, in each iteration of the for loop,
+we test whether ix reaches the size of ia and ptr reaches one element past 
+the end of ia.
+In the third part of the for-loop header, both ix and ptr are incremented 
+at the beginning of each for-loop.
