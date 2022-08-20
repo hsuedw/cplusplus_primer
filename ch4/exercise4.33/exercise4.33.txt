@@ -1,0 +1,14 @@
+Using Table 4.12 (p. 166) explain what the following expression does:
+
+    someValue ? ++x, ++y : --x, --y
+
+Because the precedence of the coditional operator (?:) is higher than
+the comma operator (,), this expression is equivalent to the following.
+
+    (someValue ? ++x, ++y : --x), --y
+
+If the value of someValue is true, ++x and ++y will be evalutated in 
+this sequence . After that, --y will be evaluated.
+
+If the value of someValue is false, --x will be evaluated first. Then, 
+--y will be evaluated.
