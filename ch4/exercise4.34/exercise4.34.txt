@@ -1,0 +1,23 @@
+Given the variable definitions in this section, explain what conversions take
+place in the following expressions:
+
+    (a) if (fval)
+        In the condition, the type of fval will be converted to bool.
+        If the value of fval is 0, the expression will be evaluated to false.
+        Otherwiser, it will be evaluated to true.
+
+    (b) dval = fval + ival;
+        The type of fval is float and that of ival is int, so the type of ival
+        will be converted to float. The type of the result of the add operator
+        is float.
+        In the assigment, the type of dval is double, so the type of the 
+        resutl of the add operator will be converted to double.
+
+    (c) dval + ival * cval;
+        Because the multply operator (*) is higher than the add operator (+),
+        ival * cval will be performed first and cval will be converted to int.
+        The type of the resutl of the multiply operator is int.
+        The the add operator will be performed. Because the type of dval is
+        double, the type of the result of the multiply operator will be 
+        converted to double. The type of the result of the add operator is 
+        double.
