@@ -1,0 +1,49 @@
+Given the following definitions,
+
+    char cval;
+    int ival;
+    unsigned int ui;
+    float fval;
+    double dval;
+
+identify the implicit type conversions, if any, taking place:
+
+    (a) cval = 'a' + 3;
+        If the type of the literal 'a' is char, its type will be converted
+        to int, because the type of literal 3 is int.
+        The type of the result of the add operator (+) is int.
+        For the assignment operator (=), because the type of cval is char,
+        the type of the result of the add operator will be converted to char.
+
+    (b) fval = ui - ival * 1.0;
+        Because the precedence of the operators, the multiply operator (*) 
+        will be performed first. Because the type of the literal 1.0 is 
+        double, the type of ival will be converted to double. The type of 
+        the result of the multiply operator (*) is double.
+        Then, the substract operator will be performed. The type of ui will
+        be converted to double. The type of the result of the subtract
+        operator is dobule.
+        Finally, the assignment operator will be performed. because the type
+        of fval is float, the type of the result of the substract operator
+        will be converted to float.
+
+    (c) dval = ui * fval;
+        The multiply operator will be performd first, so the type of ui will
+        be converted to float. The type of the result of the multiply operator
+        is float.
+        Then, the assignment operator will be performed. Because the type of 
+        dval is double, the type of the result of the multiply operator will 
+        be converted to double.
+
+    (d) cval = ival + fval + dval;
+        Because of precedence and associativity of operators, the first add
+        operator will be performed first. In this subexpression, ival + fval,
+        the type of ival will be converted to float. The type of result of 
+        this subexpression is float.
+        Then the second add operator will be performed. The type of the result
+        of the first add operator will be converted to double. The type of the
+        result of the second add operator is double.
+        Finally, the assignment operator will be performed. Because the type 
+        of cval is char, the type the result yield from the left hand side of 
+        the assignment will be converted to char. 
+
