@@ -1,0 +1,7 @@
+Explain the following expression:
+
+    double slope = static_cast<double>(j/i);
+
+If i and j are int objects, the divide operator(/) yields the quotient and 
+discards the remainder. Then, the named cast convert eht quotient (int) to 
+double and assign converted value to slope.
