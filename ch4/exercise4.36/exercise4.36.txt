@@ -1,0 +1,4 @@
+Assuming i is an int and d is a double write the expression i *= d so that it 
+does ingegral, rather than floating-point, multiplication.
+
+i *= static_cast<int>(d);
