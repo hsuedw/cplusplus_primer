@@ -1,0 +1,4 @@
+A null statement is a single semicolon. A null statement is equivalent to an
+empty block.
+A nullt statement is useful where the language requires a statement but the 
+program's logic does not.
