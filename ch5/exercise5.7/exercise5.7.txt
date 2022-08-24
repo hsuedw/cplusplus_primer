@@ -1,0 +1,51 @@
+Correct the errors in each of the following  code fragments:
+
+    (a) if (ival1 != ival2)
+            ival1 = ival2
+        else ival1 = ival2 = 0;
+
+        The statement for the if clause doesn't have the ending semicolon.
+
+        if (ival1 != ival2)
+            ival1 = ival2;
+        else ival1 = ival2 = 0;
+
+    (b) if (ival < minval)
+            minval = ival;
+            occurs = 1;
+
+        Based on the indentation, I think the code should be corrected in the 
+        following way.
+
+        if (ival < minval) {
+            minval = ival;
+            occurs = 1;
+        }
+
+    (c) if (int ival = get_value())
+            cout << "ival = " << ival << endl;
+        if (!ival)
+            cout << "ival = 0\n";
+
+        Because the scope of ival is valid within the first if clause, I 
+        would like to fix the code in the following way.
+
+        int ival;
+        if (ival = get_value())
+            cout << "ival = " << ival << endl;
+        if (!ival)
+            cout << "ival = 0\n";
+
+    (d) if (ival = 0)
+            ival = get_value();
+
+        In the if clause, the condition is an assignment expression. ival is 
+        assigned as 0, so the condition is always evaluated as false. The body 
+        of the if clause will never be executed.
+        I think the programmer might want to check whether the value of ival
+        is 0. Therefore, I would like to fix the code in the following way.
+
+        if (ival == 0)
+            ival = get_value();
+
+
