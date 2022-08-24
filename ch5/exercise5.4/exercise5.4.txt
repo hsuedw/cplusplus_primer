@@ -1,0 +1,29 @@
+Explain each of the following examples, and correct any problems you detect.
+
+(a) while (string::iterator iter != s.end()) { /* ... */ }
+
+    iter is defined on each iteration but it is not initialize, so this an
+    error.
+    I think the programmer wants to visit each character in s by using an
+    iterator. I would like to fix the code as following.
+
+    string::iterator iter = begin(s);
+    while (iter != end(s))
+    { 
+        /* ... */
+        ++iter;
+        /* ... */
+    }
+
+(b) while (bool status = find(word)) { /* ... */ }
+    if (!status) { /* ... */ }
+
+    status is defined in the while loop and its scope is valid within that
+    statement. When the program tries to use the status variable, it is out 
+    of scope. The compiler should give error message for this statement.
+    I would like to fix the code as following.
+
+    bool status;
+    while (status = find(word)) { /* ... */ }
+    if (!status) { /* ... */ }
+
