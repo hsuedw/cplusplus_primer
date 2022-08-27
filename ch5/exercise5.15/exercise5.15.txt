@@ -1,0 +1,32 @@
+Explain each of the following loops. Correct any problems you detect.
+
+(a) for (int ix = 0; ix != sz; ++ix) { /* ... */ }
+    if (ix != sz)
+        // ...
+
+    ix is defined within the for-loop, so it cannot be accessed out side the 
+    for-loop. I would like to fix the code as the following way.
+
+    int ix;
+    for (ix = 0; ix != sz; ++ix) { /* ... */ }
+    if (ix != sz)
+        // ...
+
+(b) int ix;
+    for (ix != sz; ++ix) { /* ... */ }
+
+    Although the init-statement can be null statement, the semicolon (;)
+    cannot be ignored. Also, the control variable, ix, should be initialized.
+    I would like to fix the code as the following way.
+
+    int ix = 0;
+    for (;ix != sz; ++ix) { /* ... */ }
+
+(c) for (int ix = 0; ix != sz; ++ix, ++ sz) { /* ... */ }
+
+    ix and sz are incremneted in each iteration, so this for-loop wiil never
+    stop. Moreover, because sz is increased in each iteration, the for-loop
+    may visit illegal memory addresses. I would like to fix the code in the 
+    following way.
+
+    for (int ix = 0; ix != sz; ++ix) { /* ... */ }
