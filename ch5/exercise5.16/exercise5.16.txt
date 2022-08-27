@@ -1,0 +1,24 @@
+Using a while-loop or for-loop to read data from the input stream, we have 
+the coding pattern as the following.
+
+    char ch;
+    while (cin >> ch) {
+        /* ... */
+    }
+
+    for(char ch; cin >> ch;) {
+
+    }
+
+Using an index steps through a range of values in a collection.
+
+    int sum = 0
+    for (int i = 0; i < 10; ++i) {
+        sum += i;
+    }
+
+    int sum = 0, i = 0;
+    while (i < 10) {
+        iCount += i;
+        ++i;
+    }
