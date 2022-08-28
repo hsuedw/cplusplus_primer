@@ -1,0 +1,53 @@
+Explain each of the following loops. Correct any porblems you detect.
+
+    (a) do 
+            int v1, v2;
+            cout << "Please enter two numbers to sum:";
+            if (cin >> v1 >> v2)
+                cout << "Sum is: " << v1 + v2 << endl;
+        while (cin);
+
+        Because there is more than one statements within the do-while loop,
+        the statements must be embraced by a pair of curly braces.
+
+        do { 
+            int v1, v2;
+            cout << "Please enter two numbers to sum:";
+            if (cin >> v1 >> v2)
+                cout << "Sum is: " << v1 + v2 << endl;
+        } while (cin);
+
+    (b) do {
+            // ...
+        } while (int ival = get_response());
+
+        Because the condition is not evaluated until after the statemnet or 
+        block is execuated, the do while loop does not allow variable 
+        definitions inside the condition:
+
+        int ival;
+        do {
+            // ...
+
+            // update ival
+            ival = get_response();
+
+            // ...
+        } while (ival);
+
+    (c) do {
+            int val = get_response();
+        } while (val);
+
+        The control variable must be defined outside of the do-while loop.
+
+        int ival;
+        do {
+            // ...
+
+            // update ival
+            ival = get_response();
+
+            // ...
+        } while (ival);
+
