@@ -1,0 +1,13 @@
+What is the difference between a parameter and an argument?
+
+Arguments are a comma-separated list in the call operator, which is a pair of
+parentheses. The Arguments are used to initialize the function's parameters.
+The first argument initializes the first parameter, the second argument 
+inializes the second parameter, and so on. Although we knon which argument 
+initializes which parameter, we have no guarantees about the order in which 
+arguments are evaluated.
+The type of each argument must match the corresponding parameter in the same
+way that the type of any initializer must match the type of the object it 
+initializes. We must pass exactly the same number of arguments as the function 
+has parameters.
+
