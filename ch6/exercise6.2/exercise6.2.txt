@@ -1,0 +1,36 @@
+Indicate which of the following functions are in error and why. Suggest how
+you might correct the problems.
+
+(a) int f() {
+        string s;
+        // ...
+        return s;
+    }
+
+    The object type on the return statement doesn't match the return type of 
+    the function. I would like to fix the code as the following way.
+
+    string f() {
+        string s;
+        // ...
+        return s;
+    }
+
+(b) f2 (int i) { /* ... */  }
+
+    This function doesn't return a value, so the return type should be void.
+
+    void f2 (int i) { /* ... */  }
+
+(c) int calc(int v1, int v1) /* ... */ }
+
+    The name for each parameter shouldn't be the same. Moreover, the left curly
+    brace of the function body is missing.
+
+    int calc(int v1, int v2) { /* ... */ }
+
+(d) double square(double x) return x * x;
+
+    The statements in function must be embraced by a pair of curly braces.
+
+    double square(double x) { return x * x; }
