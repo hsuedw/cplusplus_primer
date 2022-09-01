@@ -1,0 +1,28 @@
+Explain the differences between a parameter, a local variable, and a local 
+static variable. Give an example of a function in which each might be useful.
+
+Parameters and variables defined inside a function body are referred to as
+local variables. They are local to that funcion.
+
+The objects that correspond to ordinary local variables are created when the 
+function's control path passes through the variable's definition. They are
+destroyed when contol passes through the end of the block in which the variable 
+is defined.
+
+Objects that exist only while a block is executing are known as automatic 
+objects. After execution exits a block, the values of the automatic objects 
+created in that block are undefined.
+
+Parameters are automatic objects. Storage fro the parameters is allocated 
+when the function begins. Parameters are defined in the scope of the function 
+body. Hence they are destroyed when the function terminates.
+
+Automatic objects corresponding to the function's parameters are initialized
+by the arguments passed to the function. Automatic objects corresponding to 
+local variables are initialized if their definition contains an initializer. 
+Otherwise, they are default initialized, which means that uninitialized local 
+variables of built-in type have undefined values.
+
+Each local static object is initialized before the first time execution passes 
+through the object's definition. Local statics are not destroyed when a 
+function ends; they aredestroyed when the program terminates.
