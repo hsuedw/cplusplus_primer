@@ -1,0 +1,19 @@
+Explain the rationale for the type of each of find_char's parameters. In 
+particular, why is s a reference to const but occurs is a plain reference? 
+Why are these parameters references, but the char parameter c is not? What 
+whould happen if we made s a plain reference? What if we made occurs a 
+reference to const?
+
+Because string can be a large object, s should be a reference to avoid copy. 
+Moreover, because the string is the data to look for characters and no need to 
+be modified, it is a good practice to make s a reference to const. If the 
+parametere s is a plain reference, the string object to which the parameter s 
+bound to could be accidentially modified in find_char.
+Because find_char needs to return more than on variables to its caller and 
+it returns the position of the first occurance of the char parameter c, the 
+parameter occurs must be a plain reference. In this way, all the increment on 
+occurs are actually on the object to which the parameter occurs bounds to.
+If the parameter occurs is a reference to const, find_char cannot pass the 
+number of the occurence of the character to the caller.
+Because the type of the parameter c is char and the size of a char object is  
+one byte, it is not expensive copy one byte.
