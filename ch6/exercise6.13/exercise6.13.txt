@@ -1,0 +1,10 @@
+Assuming T is the name of a type, explain the difference between a function
+declared as void f (T) and void f (&T)
+
+Because T can be a large class or container, the first function declaration, 
+void f (T), will lead to a copy of the value of the argument to the parmeter 
+when the function is called.
+In the second function declaration, void f(&T), the parameter is a reference.
+After the function is called, the parameter is an alias of the argument.
+There is no copy involved. Any operation on the parameter (reference) is 
+actually operation on the argument.
