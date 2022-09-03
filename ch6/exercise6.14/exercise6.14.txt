@@ -1,0 +1,15 @@
+* Reference parameters
+
+  ** Functions must use reference parameters to operate on objects of a type 
+     that cannot be copied.
+  ** Functions prefer to use reference parameters to operate on objects of 
+     large class types or containers.
+  ** Functions should use reference parameters to return additional 
+     information via the reference parameters.
+
+* Nonreference parameters
+
+  ** Functions should use nonreference parameters when the value of the 
+     parameters may changed but should not affect the objects passed to 
+     the function.
+
