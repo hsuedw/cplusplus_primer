@@ -1,0 +1,11 @@
+The following function, although legal, is less useful than it might be. 
+Identify and correct the limitation on this function:
+
+    bool is_empty(string& s) { return s.empty();  }
+
+The parameter s of is_empty is a plain reference to string. It can only 
+be bound to a string object, so the caller cannot pass a const string 
+object or a string literal to is_empty. To fix this limitation, I would 
+change the prototype as the following.
+
+    bool is_empty(const string& s) { return s.empty();  }
