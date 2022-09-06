@@ -1,0 +1,16 @@
+In the call to factorial, why did we pass val - 1 rather than val--?
+
+The definition of factorial is shown as following.
+
+    int factorial(int val)
+    {
+        if (val > 0)
+            return factorial(val - 1) * val;
+         return 1;
+    }
+
+In the return statement with the if clause, val appears in both operands of the
+multiplication operator. In C++, there is no guarantee for the order of
+evaluation, so we don't know which operand will be evaluated first. If we passed
+val-- instead of val - 1, the right operand might be evaluated after val--. This
+could lead to logic error and factorial calculates wrong answers.
