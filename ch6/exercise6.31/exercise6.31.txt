@@ -1,0 +1,7 @@
+When is it valid to return a reference? A reference to const?
+
+When a function complete, its storage is freed. After a function terminates,
+reference to local objects refer to memory that is no longer valid. Therefere,
+never return a reference to a local object.
+When the programmer doesn't want the returned reference is used to modified the
+object to which it refers, a reference to const may be considered.
