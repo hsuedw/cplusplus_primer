@@ -1,0 +1,15 @@
+In the second version of error_msg that has an ErrCode parameter, what is the
+type of elem in the for loop?
+
+    void error_msg(ErrCode e, initializer_list<string> il)
+    {
+        cout << e.msg() << ": ";
+        for (const auto &elem : il)
+            cout << elem << " ";
+        cout << endl;
+    }
+
+Because initializer_list is a template type, when we define an initializer_list,
+we must specify the type of the elements that the list will contain. From the 
+code we know that the type of the elements in il is string. Therefore, the type 
+of elem in the for loop is const string&.
