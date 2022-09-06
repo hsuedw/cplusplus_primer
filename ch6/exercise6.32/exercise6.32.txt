@@ -1,0 +1,20 @@
+Indicate whether the following function is legal. If so, explain what it does;
+if not, correct any errors and then explain it.
+
+    int &get(int *arry, int index) { return arry[index]; }
+    int main() {
+        int ia[10];
+        for (int i = 0; i != 10; ++i) 
+            get(ia, i) = i;
+        return 0;
+    }
+
+The code is correct.
+get takes two parameters, which are an array and an index of that array. It
+returns a referenct to int object. The refrence refers to the element which the
+index parameter indicates.
+In main, ia is an array of ten ints and the for loop iterates through each
+element in ia. In each iteration, get returns a reference to each of the 
+element in ia and assign it to the value of i.
+Therefore, the purpose of the code is to define an array of ten ints and
+sequentially assign 0~9 to each of its elements.
