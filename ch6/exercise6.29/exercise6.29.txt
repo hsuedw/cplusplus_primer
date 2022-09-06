@@ -1,0 +1,8 @@
+When you use an initializer_list in a range for would you ever use a reference
+as the loop control variable? If so, why? If not, why not?
+
+Because initializer_list has begin and end members, we can use reference as the
+loop control variable in a reange for. By doing so, we can avoid copying and
+directly access the element to which the reference refers. However, because the 
+elements in an initializer_list are always const values, we cannot change the 
+value of an elemnent in an initializer_list through a reference.
