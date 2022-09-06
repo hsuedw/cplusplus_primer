@@ -1,0 +1,16 @@
+What would happen if the stopping condition in factorial were
+    if (val != 0)
+
+Then, the code would become as following.
+
+    int factorial(int val)
+    {
+        if (val != 0)
+            return factorial(val - 1) * val;
+         return 1;
+    }
+
+This code is correct.
+When factorial is called with 0 is its argument, the condition in if will be
+evaluated as false. Then, 1 will be returned to its caller. This matches the
+definition of factorial, 0! = 1.
