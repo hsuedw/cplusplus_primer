@@ -1,0 +1,6 @@
+Write the declaration for a function that returns a reference to an array of ten
+strings, without using either a trailing return, decltype, or a type alias.
+
+My answer is shown as the following declaration.
+
+    string (&func1()) [10];
