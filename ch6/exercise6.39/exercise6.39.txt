@@ -1,0 +1,25 @@
+Explain the effect of the second declaration in each one of the following sets
+of declarations. Indicate which, if any, are illegal.
+
+(a) int calc(int, int);
+    int calc(const int, const int);
+
+    In the second declaration of calc, both parameters have top-level const.
+    When calling calc, the top-level const can be ignored and both calcs can
+    be called.
+    Therefore, the compiler will show error message for ambiguity. The second
+    declaration of calc will be a redefinition.
+
+(b) int get();
+    double get();
+
+    Overloaded functions must differ in the number or the type(s) of their
+    parameters. It is an error for two functions to differ only in terms of
+    their return types.
+    The compiler will show error message for the second definition of get.
+
+(c) int *reset(int *);
+    double *reset(double *);
+
+    The two definitions for reset have different parameter lists, so they are
+    legal.
