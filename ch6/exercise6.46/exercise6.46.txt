@@ -1,0 +1,18 @@
+Would it be possible to define isShorter as a constexpr? If so, do so. If not,
+explain why not.
+
+isShorter cannot be defined as a constexpr function.
+
+A constexpr function is defined like any other function but must meet certain
+restrictions: The return type and the type of each parameter must be a liter
+type, and the function body must contain exactly one return statement.
+
+The definition of isShorter is shown as following.
+
+    bool isShorter(const string &s1, const string &s2) 
+    {
+        return s1.size() < s2.size();
+    }
+
+Although isShorter has exactly one retrun statement, its parameters don't have
+literal types. Therefore, isShorter cannot be a constexpr function.
