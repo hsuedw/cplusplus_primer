@@ -1,0 +1,8 @@
+Which, if either, of the following declarations are errors? Why?
+
+(a) int ff(int a, int b = 0, int c = 0);
+(b) char *init(int ht = 24, int wd, char bckgrnd);
+
+The function declaration in (a) is legal, while that in (b) is illegal. The
+function declaration of init has one default parameter but all the other
+parameters in its right do not have default values.
