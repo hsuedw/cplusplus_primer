@@ -1,0 +1,24 @@
+Which, if any, of the following calls are illegal? Why? Which, if any, are legal
+but unlikely to match the programmer's intent? Why?
+
+    char *init(int ht, int wd = 80, char bckgrnd = ' ');
+
+    (a) init();  (b) init(24, 10);  (c) init(14, '*');
+
+(a) The call for init in (a) is illegal. Because init has one parameter having
+    no default value, the call for init must provide an argument for that 
+    parameter.
+
+(b) The call for init in (b) is legal and likely to match the programmer's 
+    intent. init is called as if init(24, 10, ' '), because the default value 
+    of bckgrnd is ' '.
+
+(c) The call for init in (c) is legal but unlikely to match the programmer's 
+    intent. init is called as if init(14, '*', ' '). Because '*' is a char and 
+    it can be converted to int. By checking ASCII table, '*' is 42 in decimal, 
+    so the call can be considered as following.
+
+        init(14, 42, ' ');
+
+    Hence, this call passes 42 to the wd parameter.
+
