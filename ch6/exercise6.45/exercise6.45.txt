@@ -1,0 +1,6 @@
+If a function that is simple in logic can be rewritten as an inline function.
+Take Exercise 6.11 for example, the reset function can be defined as an inline
+function.
+    inline void reset(int &x) {
+        x = 0;
+    }
