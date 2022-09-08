@@ -1,0 +1,13 @@
+Which one of the following declarations and definitions would you put in a
+header? In a souce file? Explain why.
+    (a) inline bool eq(CONST BigInt&, const BigInt& ) { ... }
+    (b) void putValues(int *arr int size);
+
+(a) eq is an inline function. The compiler needs the definition, not just the
+    declaration, in order to expand the code. All the definitions of a given 
+    inline function must match exactly. Therefore, inline functions normally
+    are defined in headers.
+
+(b) putValues is neither an inline nor a constexpr function. Therefore, its
+    declaration can be put in a header while its definition can be put in a
+    source file.
