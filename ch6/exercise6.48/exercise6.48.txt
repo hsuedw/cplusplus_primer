@@ -1,0 +1,14 @@
+Explain what this loop does and whether it is a good use of assert:
+
+    string s;
+    while (cin >> s && s != sought)  {}   // emptyp body
+    assert(cin);
+
+The use of assert in this code is not good.
+
+This while loop keeps reading string from the standard input until the input
+string is the string of sought. In this case, the asser macro does nothing.
+
+This while loop also can intentionally be terminated by the user. In such case,
+the cin object will be evaluate as false in a conditional expression and the
+assert macro prints message and terminates the program.
