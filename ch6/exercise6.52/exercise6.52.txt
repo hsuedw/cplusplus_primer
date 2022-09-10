@@ -1,0 +1,16 @@
+Given the following declaratins, 
+
+    void manip(int, int);
+    double dobj;
+
+what is the rank (section 6.6.1, p. 245) of each conversion in the following
+calls?
+
+    (a) manip('a', 'z');
+    (b) manip(55.4, dobj);
+
+(a) Because the best match is void manip(int, int), the conversion rank is
+    matching through a promotion.
+
+(b) Because the best match is void manip(int, int), the conversion rank is
+    matching through an arithmetic or pointer conversion.
