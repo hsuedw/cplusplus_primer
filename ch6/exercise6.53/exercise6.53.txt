@@ -1,0 +1,27 @@
+Explain the effect of the second declaration in each one of the following sets
+of declarations, Indicate which, if any, are illegal.
+
+   (a) int calc(int&, int&);
+       int calc(const int&, const int&);
+
+       The two declarations for overloaded functions are legal. Because the
+       const in the parameter list of the second calc is low-level const, the
+       compiler can use the const-ness to distinguish to which calc is a match
+       for the call.
+
+   (b) int calc(char*, char*);
+       int calc(const char*, const char*);
+
+       The two declarations for overloaded functions are legal. Because the
+       const in the parameter list of the second calc is low-level const, the
+       compiler can use the const-ness to distinguish to which calc is a match
+       for the call.
+
+   (c) int calc(char*, char*);
+       int calc(char* const, char* const);
+
+       The two declarations for overloaded functions are illegal. Because the
+       const in the parameter list of the second calc is high-level const, which
+       will be ignore in initialization, the compiler cannot which one is a
+       match for the call.
+
