@@ -1,0 +1,16 @@
+Write a declaration for a function that takes two int parameters and returns an
+int, and declare a vector whose elements have this function pointer type.
+
+    int func(int, int);
+    vector<int (*)(int, int)> vecFunc1;
+
+    typedef int funcType(int, int);
+    vector<funcType*> vecFunc2;
+
+    vector<decltype(func) *> vecFunc3;
+
+    using funcType2 = int (int, int);
+    vector<funcType2 *> vecFunc4;
+
+    using funcPtr = int (*)(int, int);
+    vector<funcPtr> vecFunc5;
