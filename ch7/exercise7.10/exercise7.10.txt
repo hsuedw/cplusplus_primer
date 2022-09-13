@@ -1,0 +1,13 @@
+What does the condition in the following if statement do?
+
+    if (read(read(cin, data1), data2))
+
+The inner read reads data from the input stream and store the read data in 
+data1. Once a space is encountered, read returns the reference to the input 
+stream object, cin. The returned reference becomes the first argument of 
+the outter read. Then, the outter read reads data from the input stream and 
+store the read data in data2. Once another space is encountered, the outter 
+read returns the reference to the input stream object.
+
+If the data can successfully be read from the input stream, the if statement
+will be evaluated as true.
