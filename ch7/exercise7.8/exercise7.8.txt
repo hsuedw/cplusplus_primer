@@ -1,0 +1,10 @@
+Why does read define its Sales_data parameter as a plain reference and print
+define its parameter as a reference to const?
+
+read reads data from input stream and writes them into the Sales_data object 
+to which the reference parameter, item, refers. Therefore the Sales_data
+parameter for read must be a plain reference.
+
+print reads the data in the Sales_data object to which the reference parameter,
+item, refers and writes them to the output stream. Therefore, the Sales_data
+parameter for print should be a reference to const.
