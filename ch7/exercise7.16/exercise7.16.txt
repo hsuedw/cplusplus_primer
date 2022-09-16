@@ -1,0 +1,12 @@
+What, if any, are the constraints on where and how often an access specifier
+may appear inside a class definition? What kinds of members should be defined 
+after a public spcifier? What kinks should be private?
+
+A class may contain zero or more access specifiers, and there are no
+restrictions on how often an access specifier may appear. Each access specifier
+specifies the access level of the succeeding members. The specified access level
+remains in effect until the next access specifier or the end of the class body.
+
+The constructors and member functions that are part of the interface should be
+defined after a public specifier. The data members and the functions that are
+part of the implementation should be part of the private specifier.
