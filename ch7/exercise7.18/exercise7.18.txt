@@ -1,0 +1,13 @@
+What is encapsulation? Why is it useful?
+
+If a class is not encapsulated, users can reach inside an object of that class
+type and middle with its implementation.
+
+In C++, we use access specifiers to enforce encapsulation.
+
+Members defined after a public specifier are accessible to all parts of the
+program. The public members define the interface to the class.
+
+Members defined after a private specifier are accessible to the members
+functions of the class but are not accessible to code that uses the class. The
+private sections encapsulate (i.e., hide) the implementation.
