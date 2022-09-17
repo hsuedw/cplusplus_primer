@@ -1,0 +1,10 @@
+When are friends useful? Discuss the pros and cons of using friends.
+
+A friend of a class can access the nonpublic members of that class.
+
+The pros of using friend:
+  When non-member functions are part of the interface of a class, friends can
+  access the nonpublic members of that class.
+
+The cons of using friend:
+  The benifit of encapsulaton will be violated due to using friends.
