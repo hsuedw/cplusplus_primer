@@ -1,0 +1,14 @@
+When a parameter name is the same with one of the data members, it is necessary
+to use the this pointer to refer to members.
+
+Take the set member function in the Screen class for example, because the first
+parameter has the same name with the data member, width, we have to use the this
+pointer to refer to the data member.
+
+   Screen &Screen::set(pos width, pos height, char ch)  {
+       contents[width * this->width + c] = ch;
+       return *this;
+   }
+
+Therefore, the advantage by using the this pointer to refer to the members is
+clearity. The disadvntage is redundant for most of the time.
