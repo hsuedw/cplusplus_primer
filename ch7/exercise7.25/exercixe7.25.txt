@@ -1,0 +1,11 @@
+Can Screen safely rely on the default versions of copy and assignment? If so,
+why, If not, why not?
+
+If a class has members of pointer type, the object of this calss cannot safely
+rely on the versions of copy and assignment. Default copy and assignment will
+lead to two pointers share the same object.
+
+In our Screen class, cursor, height, width and access_ctr are built-in types.
+contents is an object of string class with properly defined copy and assignment
+operators. Therefore, our Screen class can safely rely on the default versions
+of copy and assignment.
