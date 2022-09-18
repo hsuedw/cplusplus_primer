@@ -1,0 +1,10 @@
+If the return type of move, set and display was Screen rather than Screen&,
+these member functions return a copy of *this. The call to set would change the
+temporary copy from move. The call to display would change the temporary copy
+from set. 
+Because the changes would be made on the temporary objects, the result will be
+    XXXXXXXXXXXXXXXXXXXX#XXXX 
+    XXXXXXXXXXXXXXXXXXXXXXXXX 
+rather than
+    XXXXXXXXXXXXXXXXXXXX#XXXX 
+    XXXXXXXXXXXXXXXXXXXX#XXXX 
