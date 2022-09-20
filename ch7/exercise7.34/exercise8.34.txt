@@ -1,0 +1,5 @@
+What would happen if we put the typedef of pos in the Screen class on page 285
+as the last line in the class?
+
+If the typedef of pos were put at the last line in the Screen class, the
+compiler would not know what pos is and lead to errors in compilation.
