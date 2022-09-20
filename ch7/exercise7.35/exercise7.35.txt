@@ -1,0 +1,50 @@
+Explain the following code, indicating which definition of Type or initVal is
+used for each use of those names. Say how you would fix any errors.
+
+1  typedef string Type;  // Declare Type to be another name for string.
+2  Type initVal();       // Declare a function initVal and its return type is 
+                         // Type (string).
+3  class Exercise {      // Define a class Exercise.
+4  public:
+5      typedef double Type;  // Inside the Exercise class, declare Type to be 
+                             // another name for double. The Type (string) 
+                             // outside the Exercise class is hiden.
+6      Type setVal(Type); // Declare the member function setVal taking Type
+                          // (double) parameter and its return type is Type
+                          // (double).
+7      Type initVal(); // Declare the member function initVal whose return type
+                       // is Type (double).
+8  private:
+9      int val; // Declare and define a private data member val whose type is
+                // int.
+10 };
+11 Type Exercise::setVal(Type parm) { // Because here is outside the scope of
+	                              // the Exercise class, the return type is 
+                                      // Type (string). This will lead to
+	                              // compilation error.
+                                      // Because the programmer has specified
+                                      // the scope operator (Exercise::) before
+                                      // setVal, the Type in parameter is
+                                      // double.
+12     val = parm + initVal(); // parm is resolved to be the parm in the
+                               // parameter list. 
+                               // Because of the scope operator (Exercise::), 
+                               // initVal is resolved to be the name in the
+                               // Exercise class.
+                               // In this expression, both parm and the return
+                               // value of initVal are double, but val is int.
+                               // Therefore, the result of parm + initVal() will
+                               // will lose information while it is assigned to
+                               // val due to implicit conversion.
+13     return val;             // Because the return type is string, this will
+                               // lead to compilation error.
+14 }
+
+I would like to modify the code in two lines. For the modified code, please read
+exercise7.35.cpp.
+  * In line 9, I would like to change the type of val to be Type (double). Then, 
+    the result of expression in line 12 won't suffer information loss
+  * In line 11, I would like to add the scope operator (Exercise::) in the front
+    of the first Type. Then, the compilation error of type miss match will be
+    fixed. Also the type conversion in the return of setVal (line 13) will be
+    eliminated.
