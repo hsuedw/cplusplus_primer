@@ -1,0 +1,17 @@
+What would happen if we gave Screen a size member defined as follows? Fix any
+problems you identify.
+
+    pos Screen::size() const
+    {
+        return height * width;
+    }
+
+Because the return type appears before the name of the class is seen, it appears
+outside the scope of class Screen. To use pos for the return type, we must
+specify the class in which that type is defined.
+
+    Screen::pos Screen::size() const
+    {
+        return height * width;
+    }
+
