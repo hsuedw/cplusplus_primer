@@ -1,0 +1,27 @@
+The following initilaizer is in error. Identify and fix the problem.
+
+    struct X {
+        X (int i, int j): base(i), rem(base % j) {}
+        int rem, base;
+    };
+
+The initialization order of data members are determined by the order of their
+definition in their class. Therefore, the initialization order of the data
+members are rem and base. However, in the constructor initializer, the
+initialization of rem depends on base, so rem will be initialized by the
+uninitialized rem.
+
+Based on the logic of the above code, I would like to modify the constructor
+initializer in the following ways. I think the first one is better, because all
+the data members are initialized by the parameters.
+
+    struct X {
+        X (int i, int j): rem(i % j), base(i) {}
+        int rem, base;
+    };
+
+    struct X {
+        X (int i, int j): base(i), rem(base % j) {}
+        int base, rem;
+    };
+
