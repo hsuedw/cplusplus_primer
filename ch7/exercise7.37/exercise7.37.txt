@@ -1,0 +1,34 @@
+Using the version of Sales_data from this section, determine which constructor
+is used to initialize each of the following variables and list the values of the
+data members in each object:
+
+1    Sales_data first_item(cin);
+2
+3    int main() {
+4        Sales_data next;
+5        Sales_data last("9-999-99999-9");
+6    }
+
+In line 1, the third constructor (Sales_data(std::istream &is) { read(is, *this); })
+in page 290 will be invoked. The values of the data members of next is listed 
+as following.
+
+    The value of next.bookNo will be the string from the user input.
+    The value of next.units_sold is 0.
+    The value of next.revenue is 0.
+
+In line 4, the default constuructor (Sales_data(std::string s = ""): bookNo(s) {  })
+will be invoked. The values of the data members of next is listed as following.
+
+    The value of next.bookNo is an empty string ("");
+    The value of next.units_sold is 0.
+    The value of next.revenue is 0.
+
+In line 5, the first constructor (Sales_data(std::string s = ""): bookNo(s) {  }) 
+in page 290 will be invoked. The values of the data members of next is listed 
+as following.
+
+    The value of next.bookNo is "9-999-99999-9", which is a string;
+    The value of next.units_sold is 0.
+    The value of next.revenue is 0.
+
