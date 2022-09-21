@@ -1,0 +1,7 @@
+Would it be legal for both the constructor that takes a string and the one that
+takes an istream& to have default arguments? If not, why not?
+
+A constructor that supplies default arguments for all its parameters als defines
+the default constructor. If two constructors have default arguments for their
+parameters, they are both considered as default constructors. This will lead to
+ambiguity.
