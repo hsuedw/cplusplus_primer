@@ -1,0 +1,24 @@
+Choose one of the following abstractions (or an abstraction of your own 
+choosing). Determine what data are needed in the class. Provide an apporate set
+of constructors. Explain your decisioins.
+
+    (a) Book      (b) Date    (c) Employee
+    (d) Vehicle   (e) Object  (f) Tree
+
+
+class Book {
+private:
+    string name;
+    string isbn;
+    string author;
+    string publisher;
+    double price = 0;
+public:
+    Book() = default;
+    Book(const string &n, 
+         const string &I,
+         double pr,
+         const string &a, const
+         string &p) : name(n), isbn(i), price(pr), author(a), publisher(p) {}
+    Book(istream &is) { is >> *this;  }
+};
