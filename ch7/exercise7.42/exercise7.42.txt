@@ -1,0 +1,23 @@
+For the class you wrote for exercise 7.40 in section 7.5.1 (p. 291), decide
+whether any of the constructors might use delegation. If so, write the
+delegating constructor(s) for your class. If not, look at the list of
+abstructions and choose one that you think would use a delegating constructor.
+Write the class definition for that abstraction.
+
+class Book {
+private:
+    string name;
+    string isbn;
+    string author;
+    string publisher;
+    double price = 0;
+public:
+    Book(const string &n, 
+         const string &I,
+         double pr,
+         const string &a,
+	 const string &p) : name(n), isbn(i), price(pr), author(a), publisher(p) {}
+
+    Book() : Book("", "", 0, "", "") {}
+    Book(istream &is) : book() { is >> *this;  }
+};
