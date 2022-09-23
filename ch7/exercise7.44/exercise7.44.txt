@@ -1,0 +1,9 @@
+Is the following declaration legal? If not, why not?
+
+   vector<NoDefault> vec(10);
+
+In this declaration, a vector with 10 NoDefault objects are declared. However,
+the  NoDefault class has no default constructor. Because it has a constructor
+with non-empty parameter list, the compiler cannot synthesis a default
+constructor for it. Therefore, in the constructor of vec, the NoDefault objects
+cannot be initialized. This declaration is illegal.
