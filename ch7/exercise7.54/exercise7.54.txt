@@ -1,0 +1,7 @@
+Should the members of Debug that begin with set_ be declare as constexpr? If
+not, why not?
+
+These member functions that begin with set_ should not be decleared as
+constexpr, because the function body of a constexpr function must contain
+exactly one return statement. In the definition of Debug, the function bodies of
+the member functions that begin with set_ do not meet this criterion.
