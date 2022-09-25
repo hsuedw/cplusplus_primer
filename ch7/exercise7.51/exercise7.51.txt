@@ -1,0 +1,17 @@
+Why do you think vector defines its single-argument constructor as explicit, but
+string does not?
+
+The prototypes of string constructors taking single-argument are listed as
+following.
+
+    string(const string& str);
+    string(const char *s);
+
+In such situations, the programmers want to create string objects with another
+srting object or c-style string. This matches the intention of the programmers,
+so it is not necessary to declare these constructor explicit.
+
+The single int argument for the vector constructor is used to designate the
+number of the elements in the vector object. No one would intentionally want to
+convert an int object to a vector object. Therefore, the vector single-argument
+constructor should be declared as explicit.
