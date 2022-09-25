@@ -1,0 +1,29 @@
+For each of the three following declarations of combine, explain what happens if
+we call i.compine(s), where i is a Sales_data and s is a string:
+
+    (a) Sales_data &combine(Sales_data);
+    (b) Sales_data &combine(Sales_data&);
+    (c) Sales_data &combine(const Sales_data&) const;
+
+(a) The code will be compiled.
+    By calling the Sales_data constructor taking only one const string argument,
+    a temporary Sales_data object will be created. This temporary Sales_data
+    object will be copied and passed to the combine member function.
+
+(b) The code will not be compiled.
+    By calling the Sales_data constructor taking only one const string argument,
+    a temporary Sales_data object will be created and passed to the combine
+    member function.
+    However, combine takes a reference to Sales_data and a reference cannot
+    refer to a temporary object. The compiler will complain this error.
+
+(c) The code will not be compiled.
+    By calling the Sales_data constructor taking only one const string argument,
+    a temporary Sales_data object will be created and passed to the combine
+    member function.
+    Because combine takes a const referenct to Sales_data, it can refere to a
+    temporary object.
+    However, combine is a const member function. The this is a pointer to const
+    Sales_data. The modification of data member is not allowed. This will lead
+    to compiler error.
+
