@@ -1,0 +1,13 @@
+Is the Data class from section 7.5.5 (p. 298) a literal class? If not, why not?
+If so, explain why it is literal.
+
+The Data class from p. 298 is listed as following.
+
+    struct Data {
+        int ival;
+	string s;
+    };
+
+Data is an aagregate class with two data members. The type of ival is int, which
+is a literal type but the type of s is string, which is not a literal type. 
+Therefore Data is not a literal class.
