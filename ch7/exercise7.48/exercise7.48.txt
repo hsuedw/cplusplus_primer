@@ -1,0 +1,18 @@
+Assuming the Sales_data constructors are not explicit, what operations happen
+during the following definitions.
+
+    string null_isbn("9-999-9999-9");
+    Sales_data item1(null_isbn);
+    Sales_data item2("9-999-9999-9");
+
+What happens if the Sales_data constructors are explicit?
+
+The first line created a string object, null_isbn, whose content is
+9-999-9999-9.
+In the second and third line, both called the constructor taking a const string
+argument to create item1 and item2, respectively. They are diffent objects of
+the same class. Their data members have the same contents.
+
+    bookNo: "9-999-9999-9"
+    units_sole: 0
+    revenue: 0.0
