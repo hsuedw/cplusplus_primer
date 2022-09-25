@@ -1,0 +1,17 @@
+Using our first version of Sales_data from section 2.6.2 (p.72), explain the
+following initialization. Identify and fix any problems.
+
+    Sales_data item = {"978-0590353403", 25, 15.99};
+
+The definition of Sales_data on p. 72 is listed as following.
+
+    struct Sales_data {
+        std::string bookNo;
+	unsigned units_sold = 0;
+	double revenue = 0.0;
+    };
+
+Therefore, the declaration of item creates a Sales_data object and its data
+members are initialized by the initializers in the braces. item.bookNo will be a
+string with content "978-0590353403", item.units_sold will be a unsigned int
+with value 25, and item.revenue is a double with value 15.99.
