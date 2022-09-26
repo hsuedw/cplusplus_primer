@@ -1,0 +1,39 @@
+Which, if any, of the following static data member declarations and definitions
+are errors? Explain why.
+
+    // example.h
+    class Example {
+    public:
+        static double rate = 6.5;
+        static const int vecSize = 20;
+	static vector<double> vec(vecSize);
+    };
+
+    // ecample.C
+    #include "example.h"
+    double Example::rate;
+    vector<double> Example::vec;
+
+Class static members may not be initialized in the class body. However, we can
+provide in-class initializers for static members that have const integral type
+and must do so for static members that are constexpr of literal type. The
+initializers must be const expressions. Such members are themselves constant
+expressions; they can be used where a constant expression is required.
+
+Therefore, in the definition of the Example class, rate and vec should not be
+initialized in the class. I would like to fix the code as following.
+
+    // example.h
+    class Example {
+    public:
+        static double rate;
+        static const int vecSize = 20;
+	static vector<double> vec;
+    };
+
+    // ecample.C
+    #include "example.h"
+    double Example::rate = 6.5;
+    vector<double> Example::vec(vecSize);
+
+
