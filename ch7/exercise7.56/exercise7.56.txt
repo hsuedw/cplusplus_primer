@@ -1,0 +1,19 @@
+What is a static class member? What are the advantages of static members? How do
+they differ from ordinary members?
+
+We say a member is associated with the class by adding the keyword static to its
+declaration. Like any other member, static members can be public or private. The
+type of static data member can be const, reference, array, class type and so
+forth.
+The static members of a class exist outside any object. Objects do not contain
+data associated with static data members. Therefore, static member functions are 
+not bound to any object. They do not have a this pointer. As a result, static 
+member functions may not be declared as const, and we may not refer to this in 
+the body of a static member. Thsi restriction applies both to explict uses of
+this and to implicit uses of this by calling a nonstatic member.
+The advantages of static members are listed as following.
+    * Storage efficient.
+    * If a static member of a class changes, each object of the class will use the new value of that static member.
+    * A static data member can have incomplete type.
+    * A static member (either a data member or a member function) can be used as a default argument.
+
