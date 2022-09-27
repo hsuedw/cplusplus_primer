@@ -1,0 +1,6 @@
+What causes the following while to terminate?
+
+    while (cin >> i) /* ... */
+
+This while loop can be terminated by EOF, invalid input data, or some
+unrecoverable istream errors.
