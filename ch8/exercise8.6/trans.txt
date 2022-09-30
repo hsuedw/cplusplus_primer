@@ -1,0 +1,6 @@
+aabbccddee 12 100
+aabbccddee 25 90
+aabbccddee 5 120
+aabbccddff 100 120
+aabbccddff 200 100
+aaaaaaaaaa 100 220
