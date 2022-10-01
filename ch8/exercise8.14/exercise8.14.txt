@@ -1,0 +1,6 @@
+Why did we declare entry and nums as const auto &?
+
+Because we won't modify the data in the people object, we use const to modify
+entry and nums.
+We use auto to let the complier to deduce the proper type of entry and nums.
+Because we don't want to copy data, entry and nums are declared as references.
