@@ -1,0 +1,5 @@
+Why didn't we use in-class initializers in PersonInfo?
+
+Because name and phones, members in PersonInfo, are class types of string and
+vector<string>, respectively, they will be initialized by the default
+constuctors of string and vector, repectively.
