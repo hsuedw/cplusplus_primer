@@ -1,0 +1,25 @@
+Which is the most appropriate - a vector, a deque, or a list - for the following
+program tasks? Explain the rationale for your choice. If there is no rease to
+prefer one or another container, explain why not.
+
+(a) Read a fixed number of words, inserting them in the container alphabetically
+    as they are entered. We'll see in the next chapter that associative
+    containers are better to this problem.
+
+    Because the number of input words is fixed, the librany array is a good
+    choice. After all the data are input, we can use sort algorithm to sort
+    these elements in the container.
+
+(b) Read an unknown number of words. Always insert new words at the back. Remove
+    the next value from the front.
+
+    Because the number of input words is unknown and we need to update the
+    elements at the back and front, deque and list are good choices for this 
+    case.
+
+(c) Read an unknown number of integers from a file. Sort the numbers and then
+    print them to standard output.
+
+    We can store all the integers into a vector. After all the integers are read
+    and stored in the vector, we can use a sort algorithm to sort all the
+    numbers. Then, we can print the sorted numbers to standard output.
