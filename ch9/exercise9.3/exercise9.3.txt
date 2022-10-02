@@ -1,0 +1,8 @@
+What are the constraints on the iterators that form iterator ranges?
+
+1. The iterators begin and end must refer to the same container.
+2. The iterator end may be equal to begin but must refer to an element before
+   the one denoted by begin.
+3. The iterator end can refer to the element just right the last element of the
+   container.
+4. It is possible to reach end by repeatedly incrementing begin.
