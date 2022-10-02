@@ -1,0 +1,16 @@
+What is wrong with the following program? How might you correct it?
+
+    list<int> lst1;
+    list<int>::iterator iter1 = lst1.begin(),
+                        iter2 = lst1.end();
+    while (iter1 < iter2) /*  ...   */
+
+The less than operator (<) is not supported by the list container.
+
+I would like to fix the in the following way.
+
+    list<int> lst1;
+    list<int>::iterator iter1 = lst1.begin(),
+                        iter2 = lst1.end();
+    while (iter1 != iter2) /*  ...   */
+   
