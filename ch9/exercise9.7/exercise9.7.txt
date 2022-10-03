@@ -1,0 +1,5 @@
+What type should be used as the index into a vector of ints?
+
+The vector<int>::size_type should be used as the index into a vector of ints,
+because it is big enough to hold the size of the largest possible container of
+the vector<int> container.
