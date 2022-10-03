@@ -1,0 +1,20 @@
+What type should be used to read elements in a list of strings? to write them?
+
+For a list of strings, we can define a container in the following.
+
+    #include <list>
+    #include <string>
+    using namespace std;
+
+    list<string> lst_str = {"Hello world!", "How are you doing?"};
+
+    // Use one of the following types to read elements.
+    list<string>::const_iterator rd_cit = lst_str.cbegin();
+    list<string>::iterator rd_it = lst_str.begin();
+    list<string>::value_type str;
+    list<string>::reference str_ref = &lst_str[0];
+    list<string>::cosnt_reference str_cref = &lst_str[0];
+
+    // Use one of the following types to write elements.
+    list<string>::iterator wr_it = lst_str.begin();
+    list<string>::reference str_ref = &lst_str[0];
