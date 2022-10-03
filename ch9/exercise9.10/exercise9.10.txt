@@ -1,0 +1,29 @@
+What are the types of the following four objects?
+
+    vector<int> v1;
+    const vector<int> v2;
+    auto it1 = v1.begin(), it2 = v2.begin();
+    auto it3 = v1.cbegin(), it4 = v2.cbegin();
+
+it1 and it2 have different types. it3 and it4 have differet types. Thereford, we
+have to fix the code as the following way.
+
+    vector<int> v1;
+    const vector<int> v2;
+    auto it1 = v1.begin();
+    auto it2 = v2.begin();
+    auto it3 = v1.cbegin();
+    auto it4 = v2.cbegin();
+
+it1 has the type of vector<int>::iterator and it refers to the first element of
+v1.
+
+it2 has the type of vector<int>::const_iterator ant it refers to the first
+element of v2;
+
+it3 has the type of vector<int>::iterator and it refers to the last element of
+v1.
+
+it4 has the type of vector<int>::const_iterator ant it refers to the last
+element of v2;
+
