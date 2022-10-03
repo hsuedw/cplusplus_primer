@@ -1,0 +1,11 @@
+What is the difference between the begin and cbegin functions?
+
+cbegin return the const iterator referring to the first element in the
+container. The programmer cannot modify the elements through this const
+iterator.
+
+begin is overloaded. There are actually two members named begin. One is a const
+member that returns the contain's const_iterator type. The other is non-const
+and returns the container's iterator type. When we call one of these members on
+a non-const object, we get the version that returns iterator. We get a cosnt
+version of the iterators only when we call these functions on a const object.
