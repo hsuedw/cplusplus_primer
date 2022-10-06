@@ -1,0 +1,9 @@
+Explain the differences between the constructor that takes a container to copy
+and the constructor that takes two iterators.
+
+The constructor that takes a container copies all the elements to to new
+container. Therefore, the new container is a copy of the orginal container.
+
+Assume the two iterators belong to the same container and denote a valid range.
+The constructor that takes the two iterators copies all the elements in the
+valid range to the new container.
