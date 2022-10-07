@@ -1,0 +1,11 @@
+Assuming c1 and c2 are containers, what (if any) constraints does the following
+usage place on the types of c1 and c2?
+
+    if (c1 < c2)
+
+Because unordered associative containers do not support relational operators (>,
+>=, <, <=), c1 and c2 cannot be unordered associative containers.
+Both c1 and c2 must be the same kind of container and mus hold elements of the
+same type. Otherwise, the < operator must be overloaded.
+If the element type doesn't support the < operator, we cannot use the < operator
+on containers (i.e. c1 and c2) holding that type.
