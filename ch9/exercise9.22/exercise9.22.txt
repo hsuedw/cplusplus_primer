@@ -1,0 +1,21 @@
+Assuming iv is a vector of ints, what is wrong with the following program? How
+might you correct the problem(s)?
+
+    vector<int>::iterator iter = iv.begin(), 
+                          mid = iv.begin() + iv.size()/2;
+    while (iter != mid)
+        if (*iter == some_val)
+            iv.insert(iter, 2 * some_val);
+
+iter and mid are two iterators that we get before the while loop. However, in
+the while loop we insert new elements into the vector. This may lead to
+reallocate the internal memory of vector, rearrange the data and invalidate the
+iterators, that is iter and mid. Therefore, this code can cause runtime error.
+
+I would like to use index to fix this code.
+
+    decltype(iv.size()) idx = 0, mid = iv.size() / 2;
+    while (idx != mid)
+        if (iv[idx] == some_val)
+            iv.insert(begin(iv) + idx, 2 * some_val);
+
