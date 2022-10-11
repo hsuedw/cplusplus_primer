@@ -1,0 +1,5 @@
+In the first program in this section on page 346, what would the values of val,
+val2, val3, and val4 be if c.size() is 1?
+
+In such a case, val, val2, val3, and val4 have the same value. Because there is
+only one element in the container, it is the first and last element.
