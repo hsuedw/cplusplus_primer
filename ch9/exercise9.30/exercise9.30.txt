@@ -1,0 +1,6 @@
+What, if any, restictions does using the version of rersize that takes a single
+argument place on the element type?
+
+For built-in types (int, float, char, ...), there is no restrictions.
+For a class type, the class type for the elements held by the container must
+implement a default constructor.
