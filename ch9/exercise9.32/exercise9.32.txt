@@ -1,0 +1,8 @@
+In the program on page 354 whould it be legal to write the call to insert as
+follows? If not, why not?
+
+    iter = vi.insert(iter, *iter++);
+
+Although the statement is legal, the order of evaluating the arguments is
+impelmentation specific in compiler. If the second argument is evaluated first,
+the logic of this statement will be wrong.
