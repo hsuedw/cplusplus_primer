@@ -1,0 +1,5 @@
+Explain the difference between a vector's capacity and its size.
+
+The size of a container is the number of elements it already holds.
+The capacity of a container is how many elements it can hold before more space
+must be allocated.
