@@ -1,0 +1,22 @@
+Explain what the following program fragment does:
+
+    vector<string> svec;
+
+    // The size of svec is zero, while the capacity will be 1024 empty string.
+    svec.reserve(1024);
+
+    string word;
+
+    // The while loop will keep appending strings into svec until an EOF is
+    // encountered in the standard input. If there are more than 1024 string
+    // from the standard input, the capacity will be increased and the internal
+    // memory for holding all the strings will be relocated to accommodate more 
+    // strings.
+    while (cin >> word)
+        svec.push_back(word)
+
+    // The size of svec will be one and a half of the original size. The newly
+    // appended elements are empty strings. If the capacity is not enough, the
+    // the library will increase the capacity and reallocate the internal memory
+    // of svec.
+    svec.resize(svec.size() + svec.size() / 2);
