@@ -1,0 +1,11 @@
+Why don't list or array have a capacity member?
+
+Because the size of the library array is fixed and a part of its type, the size
+of an object whose type is library array equals to its capacity. It is
+unnecessary to have a capacity in the library array.
+
+list is a container for doubly linked list. When inserting a new node into list,
+the library can dynamically allocate memory for that newly added node. When
+delete a node from list, the library can free the memory that is used by the
+deleted node. It is unnecessary to have a capacity in list.
+
