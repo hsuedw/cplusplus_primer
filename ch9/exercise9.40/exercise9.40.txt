@@ -1,0 +1,8 @@
+If the program in the previous exercise reads 256 words, what is its likey
+capacity after it is resized? What if it read 512? 1,000? 1048?
+
+If 256 words are read, the capacity will remain 1024 after it is resized.
+If 512 words are read, the capacity will remain 1024 after it is resized.
+If 1000 words are read, the capacity will be greater than 1500.
+If 1048 words are read, the capacity will be greater than 1572.
+
