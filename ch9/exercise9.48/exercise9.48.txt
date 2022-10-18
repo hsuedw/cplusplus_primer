@@ -1,0 +1,10 @@
+Given the definitions of name and numbers on page 365, what does
+numbers.find(name) return?
+
+
+From page 365, I can find the definitions of numbers and name as following.
+
+   string numbers("0123456789"), name("r2d2");
+
+Then, the statement, numbers.find(name), cannot find "r2d2" in "0123456789", so
+it will return string::npos.
