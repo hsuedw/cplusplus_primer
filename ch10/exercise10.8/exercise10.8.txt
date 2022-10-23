@@ -1,0 +1,20 @@
+We said that algorithms do not change the size of the containers over which they
+operate. Why doesn't the use of back_inserter invalidate this claim?
+
+The generic algorithms are not aware of the existence of conttainers. They only
+accept iterators as arguments and use those iterators to manipulate the elements
+in containers.
+
+If the ordinary iterators are given, the generic algorithms can only use them to
+sequentially or randomly visit the elements in containers. Therefore, by giving
+ordinary iterators, the generic algorithms can only read elements, change the
+value of elements, move around the elements. Thye cannot add or delete elements
+in containers.
+
+Because insert iterators can call container members that insert elements, the
+algorithms can indirectly add elements to containers by manipulating the insert
+iterators.
+
+The generic algorithms don't directly manipulate containers. They only
+manipulate iterators. If the iterators are designed to add or delete elements,
+the generic algorithms can do so.
