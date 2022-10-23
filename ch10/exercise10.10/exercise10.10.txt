@@ -1,0 +1,7 @@
+Why do you think the algorithms don't change the size of containers?
+
+The generic algorithms are not aware of the existence of containers. In stead of
+directly manipulating containers, the generic algorithms use iterators to
+indirectly manipulate the elements in containers. If the iterator can call
+container members that can add or delete elements, the generic algorithm can
+change the size of the container. Its all depends on the design of iterators.
