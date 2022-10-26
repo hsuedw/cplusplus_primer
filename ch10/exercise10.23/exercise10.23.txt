@@ -1,0 +1,8 @@
+How many arguments does bind take?
+
+The number of arguments that bind takes is mutable. The first argument for bind
+is a callable object, say A, which is the function doing the actual works. bind returns
+anther callable object, say B, for algorithm. If A takes m arguments, bind takes
+m + 1 arguments. Therefore, the other m arguments taken by bind are for A.
+Amount the m arguments, some of them are for B. For those arguments taken by A
+and B, their names are _n, where n is 1, 2, etc.
