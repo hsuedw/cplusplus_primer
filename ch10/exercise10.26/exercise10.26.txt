@@ -1,0 +1,17 @@
+Explain the differences among the three kinks of insert iterators.
+
+An inserter is an iterator adaptor that takes a container and yields an iterator
+that adds elements to the specified container. When we assign a value through an
+insert iterator, the iterator calls a container operation to add an element at a
+specified position in the given container.
+
+There are three kinds of inserters. Each differs from the others as to where
+elements are inserted:
+
+1. back_inserter creates an iterator that uses push_back.
+
+2. front_inserter creates an iterator that uses push_front.
+
+3. inserter creates an iterator that uses insert. This function takes a second
+   argument, which must be an iterator into the given container. Elements are
+   inserted ahead of the element denoted by the given iterator.
