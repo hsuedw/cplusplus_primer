@@ -1,0 +1,57 @@
+List the five iterator categories and the operations that each supports.
+
+1. Input iterators:
+   Input iterators can read elements in a sequence. An input iterator must
+   provide
+   (1) Equality and inequality operators (==, !=) to compare two iterators
+   (2) Prefix and postfix increment (++) to advance the iterator
+   (3) Dereferenc operator (*) to read an element; dereference may appear only
+       on the right-hand side of an assignment
+   (4) The arrow operator (->) as a synonym for (*it).member - that is,
+       dereference the iterator and fetch a member from the underlying object
+   Input iterators may be used only sequentially. We are guaranteed that *it++
+   is valid, but incrementing an input iterator may invalidate all other
+   iterators into the stream. As a result, there is no guarantee that we can
+   save the state of an input iterator and examine an element through that saved
+   iterator.   Input iterators may be used only sequentially. We are guaranteed
+   that *it++ is valid, but incrementing an input iterator may invalidate all
+   other iterators into the stream. As a result, there is no guarantee that we
+   can save the state of an input iterator and examine an element through that
+   saved iterator.
+
+2. Output iterators:
+   Output iterators can write rather than read elements. Output iterators must
+   provide
+   (1) Prefix and postfix increment (++) to advance the iterator
+   (2) Dereference (*), which may appear only as the left-hand side of an
+       assignment (Assigning to a dereferenced output iterator writes to the
+       underlying element.)
+
+3. Forward iterators:
+   Forward iterators can read and write a given sequence. They move in only one
+   direction throug the sequence. Forward iterators suppor all the operations of
+   both input iterators and output iterators. Moreover, they can read or write
+   the same element multiple times. Therefore, we can use the saved state of a
+   forward iterator. Hence, algorithms that use forward iterators may make
+   multiple passes through the sequence.
+
+4. Bidirectional iterators:
+   Bidirectional iterators can read and write a sequence forward or backward.
+   In addition to supporting all the operations of a forward iterator, a
+   bidirectional iterator also supports the prefix and postfix decrement (--)
+   operators.
+
+5. Random-access iterators:
+   Random-access iterators provide const-time access to any position in the
+   sequence. These iterators support all the functionality of bidirectional
+   iterators. In addition, random-access iterators support the operations
+   (1) The relational operators (<, <=, > and >=) to compare the relative
+       positions of two iterators.
+   (2) Addition and subtraction operators (+, +=, - and -=) on an iterator and
+       an integral value. The result is the iterator advanced (or retreated) the
+       integral number of elements withing the sequence.
+   (3) The subtraction operator (-) when applied to two iterators, which yields
+       the distance between two iterators.
+   (4) The subscript operator (iter[n]) as a synonym for *(iter+n).
+
+
