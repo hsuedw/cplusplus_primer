@@ -1,0 +1,7 @@
+What kind of iterator does a list have? What about a vector?
+
+Because list is the container for doubly linked list, the iterators required for
+list should be bidirectional iterators.
+
+Because vector is the dyanmic array, the iterators required for vector should be
+random-access iterators.
