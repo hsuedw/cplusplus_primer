@@ -1,0 +1,14 @@
+What kinds of iterators do you think copy requires? What about reverse or
+unique?
+
+copy requires three iterators. The first two iterators specified a range of
+elements in the input sequence and the third iterator specified the begining
+position of the output sequence. By copying elements, we tend to read the first
+element from the input sequence and write its value to the output sequence.
+Then, repeat the same operations until we reach the end of the iterator range.
+Therefore, the first two iterators should be input iterators and the third
+iterator should be an output iterator.
+
+Based on the prototype of reverse, it requires two bidirectional iterators.
+
+Based on the prototype of unique, it requires two forward iterators.
