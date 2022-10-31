@@ -1,0 +1,41 @@
+Based only on the algorithm and argument names, describe the operation that the
+each of the following library algorithms performs:
+
+(1) replace(beg, end, old_val, new_val);
+    beg and end are iterators that specifies an iterator range within a
+    sequence. The replace algorithm will be applied on this iterator range. 
+    Once the replace algorithm finds an element with the value equals old_val, 
+    it will be replaced with new_val. The result will be updated in the iterator
+    range specified by beg and end.
+
+(2) replace_if(beg, end, pred, new_val);
+    beg and end are iterators that specifies an iterator range within a sequence. 
+    The replace_if algorithm will be applied on this iterator range.
+    Based upon the naming convention of algorithms, pred is a function or lambda 
+    expression determining which element will be replaced by new_val. The
+    function or lambda given as an argument at the position of pred should
+    return a bool value (i.e. true or false) and take one argument which is one
+    of the elements within the iterator range. If an element let pred return
+    true, the value of the element will be replaced by the value of new_val.
+
+(3) replace_copy(beg, end, dest, old_val, new_val)
+    beg and end are iterators that specifies an iterator range within a sequence. 
+    The replace_copy algorithm will be applied on this iterator range. dest is
+    an iterator designating the beging position where the replace_copy algorithm
+    will put the result. 
+    The result of the replace_if algorithm is similar with that of the replace
+    algorithm. Once a old_val is found, it will be replaces by new_val.
+    After replace_copy finishes its job, the elements sepcified by beg and end 
+    remain intact while the reslut will be copied to the place begining with the
+    position specified by the dest iterator. The replace_copy algorithm assums 
+    that the memory space begining from dest is large enough to accomodate the 
+    result.
+
+(4) replace_copy_if(beg, end, dest, pred, new_val);
+    The meaning of beg, end, dest and new_val is the same with the corresponding
+    parameters in repace_copy algorithm. The meaning of pred is the same with
+    corresponding parameter of the replace_if algoritm.
+    After replace_copy finishes its job, the result will be copied to the
+    place begining from the position specified by dest. The elements with the
+    iterator range specified by beg and end will remain intact.
+
