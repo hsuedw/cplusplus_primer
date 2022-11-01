@@ -1,0 +1,15 @@
+Give an example of when each of list, vector, deque, map and set might be most
+useful.
+
+A list may be used when we need to insert or delete at any position aside from
+begining and end.
+
+A vector is usually used when we need random access and append elements.
+
+A dequeue should be used when we need to add/delete element at the begining and
+end of a sequence.
+
+A map may be used when the elements are key-value pairs and the key is not
+necessary to be integers.
+
+A set is used when we need to check whethr a value exists.
