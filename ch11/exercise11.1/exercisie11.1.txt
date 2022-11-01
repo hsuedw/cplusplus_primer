@@ -1,0 +1,10 @@
+Decribe the differences between a map and a vector.
+
+A vector object uses integers as index to find the element at a specific
+position (index). The vector elements are stored in a continuous memory block.
+
+For a map object, the key (index) is not necessary to be integers. We can use
+string or other types to be the key to find the associated element (value) in
+map. map doesn't organize its underlying container in a continuous memory bolck.
+The data structure used to implement a map container may be red-black tree or
+hash table.
