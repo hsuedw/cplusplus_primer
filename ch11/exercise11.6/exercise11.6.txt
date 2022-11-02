@@ -1,0 +1,10 @@
+Explain the difference between a set and a list. When might you use one or the
+other?
+
+Both set and list can contain a bunch of elements.
+List is a sequential container that is implemented by using doubly linked list.
+The elements in a list container are accessed sequentially.
+Set is an associative container that is implemented by self-balancing BST or
+hash table. We can use set to check whether an element exists.
+
+
