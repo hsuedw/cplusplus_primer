@@ -1,0 +1,14 @@
+Write a program that stores the excluded words in a vector instead of in a set.
+What are the advantages to using a set?
+
+In a vector, if all the words are sorted, we can use binary search to find a
+specfic word. The time complexity for seaching can be O(logn). If the words are
+not sorted, we can use linear search to find a specific word. The time
+complexity for searching can be O(n).
+
+In a set, if it is implement by using self-balancing BST (ex: red-black tree,
+AVL), the time complexity for searching a word can be O(logn). If set is
+implemented by using hast table, the best searching time complexity could be
+O(1) while the worst could be O(n), which depends on the implementation of hash
+function and the pattern of the input data.
+
