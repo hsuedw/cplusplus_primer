@@ -1,0 +1,16 @@
+Assuming c is a multiset of strings and v is a vector of strings, explain the
+following calls. Indicate whether each call is legal?
+
+(1) copy(v.begin(), v.end(), inserter(c, c.end()));
+(2) copy(v.begin(), v.end(), back_inserter(c));
+
+    The statements (1) and (2) are illegal. Because the iterators for a multiset
+    are read-only, we can not use those iterators to change the content of a
+    multiset.
+
+(3) copy(c.begin(), c.end(), inserter(v, v.end()));
+(4) copy(c.begin(), c.end(), back_inserter(v));
+
+    The statements (3) and (4) are legal, because we can use the iterators for a
+    vector to change its content.
+
