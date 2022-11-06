@@ -1,0 +1,5 @@
+Define a variable that you initialize by calling begin() on th multiset named
+bookkstore from section 11.2.2 (p. 425). Write the variable's type without using
+auto or decltype.
+
+multiset<Sales_data, bool (*)(const Sales_data &, const Sales_data &)>::iterator
