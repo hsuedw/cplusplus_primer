@@ -1,0 +1,7 @@
+Given a map<string, vector<int>>, write the types used as an argument and as the
+return value for the fersion of insert that inserts one element
+
+pair<map<string, vector<int>>::iterator, bool> insert(const pair<const string, vector<int>> &)
+
+The type for argument is "const pair<const string, vector<int>> &".
+The type for the return vaule is "pair<map<string, vector<int>>::iterator, bool>".
