@@ -1,0 +1,9 @@
+What does the following program do?
+
+    map<int, int> m;
+    m[0] = 1;
+
+Declare and define a map object, m. Its key type is int, mapped type is int and
+value type is pair<const int, int>.
+Insert a new key (0) and its associated value (0) into the map (m). Then,
+assigne the assiciated value to be 1.
