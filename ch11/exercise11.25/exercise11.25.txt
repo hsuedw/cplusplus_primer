@@ -1,0 +1,9 @@
+Constrast the following program with the one in the previous exercise
+
+    vector<int> v;
+    v[0] = 1;
+
+The second line is a runtime error. Because v is an empty vector, the element
+with index 0 doesn't exist. Accessing an non-existing element in vector leads to
+a serious consequence because the subscript operator doesn't check whether the
+index is valid.
