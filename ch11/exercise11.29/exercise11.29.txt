@@ -1,0 +1,15 @@
+What do upper_bound, lower_bound, and equal_range return when you pass them a
+key that is not the container?
+
+If the key is in the container, the iterator retuned from lower_bound eill refer
+to the first instance of that key and the iterator returned by upper_bound will
+refer just after the last instance of the key. If the element is not in the
+container, then lower_bound and upper_bound will return equal iterators; both
+will refere to the point at which the key can be inserted without disrupting the
+order. Thus, calling lower_bound and upper_bound on the same key yields an
+iterator range that denotes all the elements with that key.
+equal_range takes a key and returns a pair of iterators. If the key is present,
+then the first iterator refers to the first instance of the key and the second
+iterator refers one past the last instance of the key. If no matching element is
+found, then both the first and second iterators refer to the position where this
+key can be inserted.
