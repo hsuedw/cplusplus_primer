@@ -1,0 +1,6 @@
+What kinks of problems would you use count to solve? When might you use find
+instead?
+
+We can use count to if the key could present multiple times and we want to know
+how many time it happens.
+We can use find if we only want to know whether the key is present.
