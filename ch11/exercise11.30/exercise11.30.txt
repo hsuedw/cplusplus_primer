@@ -1,0 +1,20 @@
+Explain the meaning of the operand pos.first->second used in the output
+expression of the final program in this section.
+
+List the program as following.
+
+    for (auto pos = authors.equal_range(search_item);
+         pos.first != pos.second; ++pos.first) 
+        cout << pos.first->second << endl;
+
+Based on the code on page 434, authour is declared as following.
+
+    multimap<string, string> authors;
+
+Therefore, the key type of authors is string , the mapped type of authors is
+string, and the value type of authors is pair<const string, string>.
+
+pos is a pair of iterators returned by equal_range. If the key (search_item)
+is present in author, pos.first is the iterator refers to the first instance 
+of the key. This instance has the type of the value type of authors. Therefore, 
+if the key is present in authors, pos.first->second is the title of the book.
