@@ -1,0 +1,9 @@
+In buildMap, what effect, if any, would there be from rewriting
+    trans_map[key] = value.substr(1);
+as trans_map.insert({key, value.substr(1)})?
+
+For the original code, if key presents multiple times, the new associated string
+will replace with the old associated string.
+For the new code, if key presents multiple times, its associated value will 
+remain the first string. Therefore, the new strings with the same key will be 
+ignored.
