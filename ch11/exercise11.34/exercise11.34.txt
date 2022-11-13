@@ -1,0 +1,6 @@
+What would happen if we used the subscript operator instead of find in the
+transform function?
+
+When we use the subscript operator instead of find, if the key is not present in
+the map, a new element with this key and an associated empty string will be
+inserted into the map. Then, this key will be transformed to an empty string.
