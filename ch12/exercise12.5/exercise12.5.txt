@@ -1,0 +1,24 @@
+We did not make the constructor that takes an initializer_list explicit. Discuss
+the pros and cons of this design choice.
+
+The pros and cons greatly depend on the intention of the programmer. If the
+constructor taking an initializer_list is declared as explicit, the implicit
+conversion from an initializer_list to a StrBlob object. It also means we can
+only use direct initialization instead of copy initialization.
+Therefore, the pros and cons for implicit conversion are listed as following.
+1. pros
+   - The programmer can use copy initializaton to initialize a StrBlob object.
+     ex: StrBlob obj = { "John", "Mary", "George" };
+   - The programmer can use direct initialization to initialize a StrBlob
+     object.
+     ex: StrBlob obj({ "John", "Mary", "George" });
+   - The programmer can use assigment to assign an initializer list to a StrBlob
+     object.
+     ex: StrBlob b4;
+         b4 = { "Angus", "Bruce", "Jack" };
+   - The programmer can pass an initializer list to a function that takes a
+     parameter whose type is StrBlob.
+2. cons
+   - The programmer may ignore the implicit conversion and the implicit
+     conversion doen't make sense in the program. This could lead to potential
+     bugs.
