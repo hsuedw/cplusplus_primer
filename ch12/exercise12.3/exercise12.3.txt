@@ -1,0 +1,9 @@
+Does this class need const versions of push_back and pop_back? If so, add them.
+If not, why aren't they needed?
+
+I don't think we need const versions of push_back and pop_back.
+The purpose that we define and implement push_back and pop_back is to add and
+remove the element at the end of the dynamically allocated vector object which
+is pointed by the shared pointer data.
+For a const StrBlob object, any change to the const object is not allowed.
+Therefore, the const versions of push_back and pop_back are not needed.
