@@ -1,0 +1,5 @@
+In out check function we didn't check whether i was greater than zero. Why is it
+okay to omit that check?
+
+Because the type of i is vector<string>::size_type which is unsigned int, the
+values held by i are greater than or equal to zero.
