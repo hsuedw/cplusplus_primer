@@ -1,0 +1,10 @@
+How many elements do b1 and b2 have at the end of this code?
+
+    StrBlob b1;
+    {
+        strBlob b2 = {"a", "an", "the"};
+	b1 = b2;
+	b2.push_back("about");
+    }
+
+At the end of this code b1 will have four elements and b2 will be destroyed.
