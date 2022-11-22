@@ -1,0 +1,17 @@
+Explain what happens in the following code:
+
+    int *q = new int(42), *r = new int(100);
+    r = q;
+    auto q2 = make_shared<int>(42), r2 = make_shared<int>(100);
+    r2 = q2;
+
+In the first line, we dynamically allocated two pieces of memory. Both of them
+are for int objects. Therefore, q points to a piece of memory initialized to 42
+and r points to the other piece of memory initialized to 100;
+In the second line, r is assigned to the memory address to which q points so the
+memory holding 100 is lost and leads to memroy leak.
+In the thrid line, we use smart point to manage dynamically allocated memory. q2
+points to a piece of memory holding 42 and r2 points to the other piece of
+memory holding 100.
+In the forth line, r2 points to the memory q2 points. Therefore, the memory 
+which originally pointed by r2 will be automatically freed.
