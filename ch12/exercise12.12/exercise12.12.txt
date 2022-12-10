@@ -1,0 +1,43 @@
+Using the declarations of p and sp explain each of the following calls to
+process. If the call is legal, explain what it does. If the call is illegal,
+explain why:
+    auto p = new int();
+    auto sp = make_shared<int>();
+    (a) process(sp);
+    (b) process(new int());
+    (c) process(p);
+    (d) process(shared_ptr<int>(p));
+
+p is a built-in type pointer. Its type is int*.
+sp is a shared pointer. Its type is shared_ptr<int>.
+(a) We use sp as the argument for process and copy it to process's parameter,
+    ptr. Therefore, the reference count for sp will be incremented to 2.
+    After process finishes, the reference count for sp will decrement to 1 and
+    the memory to which sp points still can be accessed.
+    Because there is no memory leak and dangling pointer, this call is legal and
+    correct.
+(b) Once process is called, a piece of memory is dynamically allocated for
+    holding an int value and this memory is pointed by a temporary pointer.
+    This temporary pointer (memory address) is use to initialize a shared
+    pointer (shared_ptr<int>), which is the argument for process. Then, ptr, the
+    process parameter, takes the responsibility to manage this dynamically
+    allocated memory. The reference count of ptr is 1.
+    After process finishes, ptr will be destroyed, its reference conut will be
+    decremented to 0 and the memory will be freed.
+    Because there is no memory leak and dangling pointer, this call is legal and
+    correct.
+(c) This call is illegal.
+    A built-in pointer type (int*) cannot be use in the copy initialization for
+    shared pointer.
+(d) Once process is called, the memory address held by be is use to direct
+    initialize a temoprary object of type shared_ptr<int>. Then, this temporary 
+    shared_ptr is used to copy initialize the parameter of process, ptr. Then,
+    in the execution in process, the reference count for ptr is 1. ptr also
+    takes over the resposibility of managing the memory which was dynamically
+    allocated before process is called.
+    After process finishes, ptr will be destroyed, the reference count will be
+    decremented to 0 and the associated memory will be freed. Then, p will
+    become a dangling pointer after process finishes.
+    Therefore, this call is legal but not correct, because the result of
+    accessing memory by using p is undefined.
+
