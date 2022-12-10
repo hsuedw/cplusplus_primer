@@ -1,0 +1,15 @@
+What happens if we execute the following code?
+
+    auto sp = make_shared<int>();
+    auto p = sp.get();
+    delete p;
+
+In the first line, we create a shared pointer, so the type of sp is 
+shared_ptr<int>.
+In the second line, we use the get member function to find the memory that is 
+mamaged by sp and use its address to initial p. Therefore, the type of p is 
+int*.
+In the thrid line, we free the memory to which p points and also managed by sp.
+This makes s and sp become dangling pointers. What happens when we attempt to
+use sp and p is undefined. Moreover, because the reference count of sp is still
+1, when sp is destroyed the pointer to that memory will be deleted again.
