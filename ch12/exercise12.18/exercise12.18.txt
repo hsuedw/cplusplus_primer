@@ -1,0 +1,5 @@
+Why doesn't shared_ptr have a release member?
+
+By using shared_ptr, we can have many shared_ptr to manage the same piece of 
+memory. It is not necessary to release the ownership of a piece of memory and
+give it to another shared_ptr.
