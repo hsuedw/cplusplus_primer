@@ -1,0 +1,32 @@
+Which of the following unique_ptr declarations are illegal or likely to result
+in subsequent program error? Explain what the problem is with each one.
+
+    int ix = 1024, *pi = &ix, *pi2 = new int(2048);
+    typedef unique_ptr<int> IntP;
+    (a) IntP p0(ix);
+    (b) IntP p1(pi);
+    (c) IntP p2(pi2);
+    (d) IntP p3(&ix);
+    (e) IntP p4(new int(2048));
+    (f) IntP p5(p2.get());
+
+(a) This declaration is illegal because ix is not a built-in pointer type.
+
+(b) This declaration is legal because pi is a built-in pointer type, which is
+    int*. However, this declaration results in subsequent error if the release
+    member is called or p1 is destroyed. Then the space of ix will be freed.
+    This is a undefined behavior.
+
+(c) This declaration is legal because we use a int* to initialize p3. However,
+    if we try to use pi2 after p2 is destroyed, the behavior is undefine because
+    pi2 becomes a dangling pointer.
+
+(d) This declaration is legal but has the same issue in (b)
+
+(e) This declaration is legal and has no subsequent errors.
+
+(f) This declaration is legal but will lead to subsequnet errors. After this
+    declaration, two independent unique_ptrs manage the same memory. If one of
+    them is destroyed and free the associated memory, the other unique_ptr 
+    pointer will become a dangling pointer.
+
