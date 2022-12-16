@@ -1,0 +1,9 @@
+We could have written StrBlobPtr's deref member as follows:
+    std::string& deref() const
+    { return (*check(curr, "dereference past end"))[curr]; }
+Which version do you think is better and why?
+
+Both versions are correct. The original version is clear to read and easy to
+understand. The new version is succinct but difficult to understand.
+I personally prefer the original version.
+
