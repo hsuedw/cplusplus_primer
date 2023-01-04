@@ -1,0 +1,10 @@
+What difference(s) would it make if we used a vector instead of a set to hold
+the line members? Which approach is better? Why?
+
+In this case, set is better than vector.
+One of the requirement is that if a word occurs more than once on the same 
+line, we'll display that line only once.
+If we use set and try to insert a duplicated line number, it won't be inserted.
+If we use vector, we need to do a linear search and make sure the line number 
+is not duplicated, then we can add it in the vector. This will make the
+performance poor.
