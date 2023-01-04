@@ -1,0 +1,10 @@
+all:
+	g++ -c StrBlob.cpp -o StrBlob.o
+	g++ -c StrBlobPtr.cpp -o StrBlobPtr.o
+	g++ -c TextQuery.cpp -o TextQuery.o
+	g++ -c exercise12.32.cpp -o exercise12.32.o
+	g++ StrBlob.o StrBlobPtr.o TextQuery.o exercise12.32.o -o main
+
+clean:
+	rm -rf *.o main
+
