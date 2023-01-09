@@ -1,0 +1,8 @@
+Explain why the following declaration is illegal:
+    Sales_data::Sales_data(Sales_data rhs);
+
+This the definition for the copy constructor for Sales_data. The parameret must
+be a reference to Sales_data. If the parameter were not a referece, the the call
+would never succeed--to call the copy constructor, we'd need to use the copy
+constructor to copy the argument, bue to copy the argument, we'd need to call
+the copy constructor, and so on indefinitely.
