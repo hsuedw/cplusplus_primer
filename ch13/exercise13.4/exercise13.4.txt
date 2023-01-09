@@ -1,0 +1,27 @@
+Assuming Point is a class type with a public copy constructor, identify each use
+of the copy constructor in this program fragment:
+
+    Point global;
+
+    // Copy initialize will happen when argument is copied to the parameter, so
+    // the copy constructor will be called.
+    Point foo_bar(Point arg)
+    {
+        // We use the = operator to initialize local, so the copy constructor 
+	// will be called.
+        Point local = arg, *heap = new Point(global);
+
+	// We use the = operator to assign local to *heap, so the copy
+	// constructor will be called.
+	*heap = local;
+
+	// We brace initialize the elements in pa, which is an array, so the
+	// constructor will be called.
+	Point pa[ 4 ] = { loca, *heap };
+
+	// The return type is a nonrefence to Point, sot the copy constructor
+	// will be called.
+	return *heap;
+    }
+
+
