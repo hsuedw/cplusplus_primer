@@ -1,0 +1,13 @@
+What happens when we copy a StrBlob? What about StrBlobPtrs?
+
+Based on the code on page 456, because we don't define copy constructor for 
+StrBlob, the synthesized copy constructor memberwise copies the members of 
+its argument into the object being created. The member called data is a shared
+pointer to vector. Therefore, both StrBlob object will share the same vector
+object and the reference count will be incremented by 1.
+Based on the code on page 474, because we don't define copy constructor for
+StrBlobPtr, the synthesized copy constructor memberwise copies the members of 
+its argument into the object being created. The member called wptr is a weak_ptr
+to vector. Therefore, both StrBlobPtr object will share teh same vector object
+and the reference count will not be incremented by 1.
+
