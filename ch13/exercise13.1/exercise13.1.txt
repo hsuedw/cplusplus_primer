@@ -1,0 +1,18 @@
+What is a copy constructor? When is it used?
+
+A constructor is the copy constructor if its first parameter is a reference to
+the class and any additional parameters have default values.
+    class Foo {
+    public:
+        Foo();             // default constructor
+	Foo(const Foo &);  // copy constructor
+        // ...
+    };
+
+The copy constructor is used when copy initialization happens. Copy
+initialization happens not only when we define variables using an =, but alos
+when we
+    1. Pass an object as an argument to parameter of noreference type.
+    2. Return an object from a function that has a nonreference return type.
+    3. Brace initialize the elements, in an array or the members of an aggregate
+       class.
