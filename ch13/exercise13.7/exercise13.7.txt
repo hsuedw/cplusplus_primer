@@ -1,0 +1,15 @@
+What happens when we assign ont StrBlob to another? What about StrBlobPtrs?
+
+Based on the code on page 456, because we don't define the copy-assignment
+operator for StrBlob, the synthesized copy-assignment operator  memberwise 
+copies the members of its argument (the right-hand operand) into the left-hand
+operand, which is bound to the implicit this parameter. The member called data 
+is a shared pointer to vector. Therefore, both StrBlob object will share the 
+same vector object and the reference count will be incremented by 1.
+Based on the code on page 474, because we don't define copy-assignment operator 
+for StrBlobPtr, the synthesized copy-asssingment operator memberwise copies the 
+members of its argument (the right-hand operand) into the left-hand operand,
+which is bound to the implicit this parameter. The member called wptr is a 
+weak_ptr to vector. Therefore, both StrBlobPtr object will share teh same vector 
+object and the reference count will not be incremented by 1.
+
