@@ -1,0 +1,31 @@
+Write the assignment operator for the HasPtr class from exercise 13.5 in section
+13.1.1 (p. 499). As with the copy constructor, your assignment operator should
+copy the object to which ps points.
+
+    class HasPtr {
+    public:
+        HasPtr(const std::string &s = std::string()) :
+            ps(new std::string(s)), i(0) {}
+
+	// copy constructor
+        HasPtr(const HasPtr &);
+
+        // copy-assignment operator
+        HasPtr &operator=(const HasPtr &);
+
+    private:
+        std::string *ps;
+	int    i;
+    };
+
+    HasPtr::HasPtr(const HasPtr &rhs) :
+        ps(new string(*rhs.ps)), i(rhs.i) {}
+
+    HasPtr &HasPtr::operator=(const HasPtr &rhs) {
+        delete ps;
+        ps = new std::string(*rhs.ps);
+        i = rhs.i;
+
+        return *this;
+    }
+
