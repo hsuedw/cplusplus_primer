@@ -1,0 +1,24 @@
+What is a copy-assignment operator? When is this operator used? What does the
+synthesized copy-assignment operator do? When is it synthesized?
+
+The assignment operator is a function anmed operator=. The copy-assignment
+operator takes an argument of the same type as the class:
+    class Foo {
+    public:
+        Foo &operator=(const Foo &);
+        // ...
+    };
+Assignment operators ordinarily should return a reference to their left-hand
+operand. The right-hand operand in a binary operator, such as assignment, is
+passed as an explicit parameter.
+
+A copy-assignment operator is used in assigment.
+    Sales_data trans, accum;
+    trans = accum; // uses the Sales_data copy-assignment operator
+
+The compiler generates a synthesized copy-assignment operator for a class if the
+class does not define its own.
+
+A copy-assignment operator assigns eaxh non-static member of the right-hand
+object to the correcponding member of the left-hand object using the
+copy-assignment operator for the type of that member.
