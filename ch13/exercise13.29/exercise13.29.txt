@@ -1,0 +1,6 @@
+Explain why the calls to swap inside swap(HasPtr&, HasPtr&) do not cause a
+recursion loop.
+
+Based upon the code on p. 517, the calls to swap inside swap(HasPtr&, HasPtr&)
+is the swap of the standard library. It is std::swap but not swap(HasPtr&, HasPtr&),
+so it won't cause recursion loop.

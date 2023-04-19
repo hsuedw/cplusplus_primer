@@ -1,0 +1,10 @@
+Why is the parameter to the save and remove members of Message a Forder&? Why
+didn't we define that parameter as Folder? Or const Folder&?
+
+If we use Folder as the type of the parameter in save and remove, the Folder
+object manipulated in save and remove is a local copy of the argument. Our
+change in the local Folder object won't affect the argument in the caller.
+
+If we use const Folder& as the type of hte parameter in save and remove, we can
+not change the argument referenced by the parameter because of the const
+modifier.

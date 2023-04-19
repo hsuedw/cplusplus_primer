@@ -1,0 +1,17 @@
+Assume that numbered is a class with a default constructor that generates a
+unique serial number for each object, which is stored in a data member named
+mysn. Assuming numbered uses the synthesized copy-control members and given the
+following function:
+
+    void f (numbered s) { cout << s.mysn << endl; }
+
+what output does the following code produce?
+
+    numbered a, b = a, c = b;
+    f(a); f(b); f(c);
+
+Because the default constructor of the numbered class generates a unique serial
+number for each object, a has a unique serial number. However, the numbered
+class uses the synthesized copy-control members, so b and c has the same serial
+number with a. Therefore, all the function calls of f will print the same serial
+number.

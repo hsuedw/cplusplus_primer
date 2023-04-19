@@ -1,0 +1,13 @@
+Assume numbered has a copy constructor that generates a new serial number. Does
+that change the output of the calls in the previous exercise? If so, why? What
+output gets generated?
+
+If the numbered class has a copy constructor that can generate a unique serial
+number, all the three function calls of f will print different serial numbers.
+Because the following code will invoke the copy constructor for b and c, b and c
+have their own unique serial numbers.
+    numbered a, b = a, c = b;
+However, because the parameter of f is call by value, a new numbered object will
+be created and the copy constructor will be invoked once f is called. Therefore,
+the printed serial number will be different with the argument passed to f.
+

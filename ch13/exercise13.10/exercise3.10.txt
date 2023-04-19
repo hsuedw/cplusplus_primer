@@ -1,0 +1,18 @@
+What happens when a StrBlob object is destroyed? What about a StrBlobPtr?
+
+Based on the code on page 456, because we don't define the destructor, the
+compiler defines a synthesized destructor for us. When a StrBlob object is
+destroyed, the synthesized destructor function body, which is empty, will be
+executed. After the synthesized destructor is executed, the reference count 
+of data, which is a shared_ptr, is decremented by one. Once the reference i
+reaches zero, the object to which pointed by data will be destroyed. 
+
+Based on the code on page 474, because we don't define the destructor, the
+compiler defines a synthesized destructor for us. When an StrBlobPtr object is
+destroyed, the synthesized destructor function body, which is empty, will be
+executed. After the synthesized destructor is executed, the two members are
+destroyed in following order.
+1. The type of curr is std::size_t, which is a built-in type, so it doesn't have
+   destructors, so nothing is done to destroy curr.
+2. wptr is a week_ptr, so it is a class type and has a destructor. When wptr is
+   destroyed, the reference count of the shared_ptr object won't be decreased.

@@ -1,0 +1,15 @@
+Would the pointerlike version of HasPtr benefit from defining a swap function?
+If so, what is the benefit? If not, why not?
+
+We can define our swap for HasPtr as following and make it a friend function to
+the Hasptr class. This self-defined swap function will swap the string pointers,
+the value in member i and the pointer of the used member.
+
+inline void swap(HasPtr &lhs, HasPtr *rhs) {
+    using std::swap;
+    swap(lhs.ps, rhs.ps);
+    swap(lhs.i, rhs.i);
+    swap(lhs.used, rhs.used);
+}
+
+However, the swap function in standard library can do the same thing for us.

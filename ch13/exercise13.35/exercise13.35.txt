@@ -1,0 +1,15 @@
+What would happen if Message used the synthesized versions of the copy-control
+members?
+
+If we use the synthesized version of copy constructor, the newly created Message
+object won't appear in the Folder objects in which the original Message object
+appears.
+
+If we use the synthesized version of copy-assignment operator, the left-hand
+side Message object won't appear in the Folders in which the right-hand side
+Message object appears.
+
+If we use the synthesized version of destructor, after the Message is destroyed,
+the Folders that was saving this destroyed Message still have the pointers
+refering to the destroyed Message. This is a serious bug that the program will 
+access invalid memory address.

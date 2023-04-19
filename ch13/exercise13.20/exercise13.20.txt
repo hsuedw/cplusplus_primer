@@ -1,0 +1,50 @@
+Explain what happens when we copy, assign, or destroy objects of our TextQuery
+and QueryResult classes from section 12.3 (p. 484)
+
+The copy control members TextQuery and QueryResult classes defined in 
+section 12.3 are all synthesized by the compiler.
+
+* The TextQuery class (p. 488)
+
+  - copy
+    The file member is a shared pointer. The default copy constructor will copy 
+    the file member of the original object (the right operand) to the newly
+    created object (the left operand). Therefore, there will be one more shared
+    pointer refers to the object and the reference counter of file will be 
+    increased by 1.
+    The other member, wm, will be copied to the newly created object, too.
+
+  - assign
+    The file member is a shared pointer. The syntheiszed copy-assignment operator
+    will copy the file member of the original object (right operand) to the other
+    object (left operand). Therefore, there will be one more shared pointer refers
+    to the object and the reference counter of file will be increased by 1.
+    The other member, wm, will be copied to the left-hand operator, too.
+
+  - destory
+    The synthesized destructor will destroy the two members, file and wm.
+    While file is destroyed, the reference counter will be decremented by 1.
+
+* The QueryResult class (p. 487)
+
+  - copy
+    Both lines and file are smart pointers. The default copy constructor will
+    copy these members (smart pointers) of the original object (the right
+    operand) to the newly created object (the left operand). Therefore, the
+    reference counters of lines and file will both be increased by one.
+    The third member, sought, will be copied to the newly created object, too.
+
+  - assign
+    Both lines and file are smart pointers. The synthesized copy-assignment
+    operator will copy these members (smart pointers) of the original object
+    (the right operand) to the newly created object (the left operand). 
+    Therefore, the reference counters of lines and file will both be increased
+    by one. 
+    The third member, sought, will be copied to the newly created object, too.
+
+  - destory
+    The synthesized destructor will destroy all the members, file and wm.
+    While lines and file are destroyed, both reference counters will be 
+    decremented by 1.
+    If a reference counter reaches 0, the refered object will be destroyed, too.
+

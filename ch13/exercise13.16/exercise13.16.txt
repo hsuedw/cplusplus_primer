@@ -1,0 +1,6 @@
+What if the parameter in f were const numbered&? Does that change the output? If
+so, why? What output gets genetated?
+
+If f has the following definition, it will print the same serial with the
+argument passed to f.
+    void f(const numbered & s) { cout << s.mysn << endl; }

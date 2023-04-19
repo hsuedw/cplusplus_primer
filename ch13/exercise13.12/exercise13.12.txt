@@ -1,0 +1,12 @@
+How many destructor calls occur in the following code fragment?
+    bool fcn(const Sales_data *trans, Sales_data accum)
+    {
+        Sales_data item1(*trans), item2(accum);
+	return item1.isbn != item2.isbn();
+    }
+
+After fcn is called, there will be three Sales_data objects be created. They are
+accum, item1 and item2. Therefore, When fcn finishes, there will be three
+destructor calls occur.
+trans is a pointer to a Sales_data object, so when fcn finishes the object to
+which pointed by trans won't be destroyed.

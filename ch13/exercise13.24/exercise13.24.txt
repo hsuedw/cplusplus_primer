@@ -1,0 +1,14 @@
+What would happen if the version of HasPtr in this section didn't define a
+destructor? What if HasPtr didn't define the copy constructor?
+
+If the destructor is not defined, the compiler will synthesize it for HasPtr.
+The synthesized destructor won't delete the dyanmically allocated memory to
+which pointed by ps. This causes memory leak.
+
+If the copy constructor is not defined, the compiler will synthesize it for
+HasPtr. The synthesized copy constructor will copy the ps from the right hand
+side operand, so the ps of both operand (rhs and lhs) will point to the same
+memory. This not the correct behavior of copyint object.
+If one object change the memory pointed by ps, this will affect the data of both
+objects. Moreover, if one object is destroyed, the memory pointed by ps will be
+destroyed, too. This will cause a dangling pionter in the other object.

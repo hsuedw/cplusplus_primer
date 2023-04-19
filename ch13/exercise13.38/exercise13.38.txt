@@ -1,0 +1,39 @@
+We did not use copy and swap to define the Message assignment operator. Why do
+you suppose this is so?
+
+If we use swap in the copy-assignment operator of the Message class, we need the
+implement the it as following.
+
+Message& Message::operator=(Message rhs) {
+    swap(*this, rhs);
+    return *this;
+}
+
+The details of execution are described as follows
+
+1. The Message object right-hand operand will be copied to the parameter, rhs,
+   of the copy-assignment operator. This will invoke the copy consructor of the
+   Message class. The copy constructor will copy the contents and folders of the
+   right-hand operand to rhs. Then, add the newly created messag, rhs, to all
+   the folders in which the right-hand operand shows.
+
+2. Then, our swap for Message class is called.
+   It traverses all the folders in the left-hand operand, lhs, and remove it 
+   from all the folders in which it shows.
+   It traverses all the folders in the right-hand operand, rhs, and remove it
+   from all the folders in which it shows.
+   The swap of string and set will be called to exchange the data in contents
+   and folders.
+   All the folders in which has lhs will be traversed and add lhs to them.
+   All the folders in which has rhs will be traversed and add rhs to them.
+   Our swap finishes its job and return to the copy-assignment operator.
+
+3. Now, we are in the copy-assignment operator.
+   Because our swap is called by reference, rhs contains the data of the
+   original left-hand operand. Once the copy constructor finishes, rhs will be
+   destroyed, so the destructor of the Message class will be called. Then, 
+   remove_from_Folders() will be called to remove rhs from all the folders.
+
+This is correct. However, we have to copy the Message object when the
+copy-assignment operator is invoked, add/remove it to all the folders twice, and
+destroy it. Those are redundant. This is not a good implementation in this case.

@@ -1,0 +1,2 @@
+Please refere to the addFolder() and remFolder members of the Message class in
+exercise 13.26.

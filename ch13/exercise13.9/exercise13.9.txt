@@ -1,0 +1,23 @@
+What is a destructor? What dpes the synthesized destructor do? When is a
+destructor synthesized?
+
+The destructor is a member function with the name of the class prefixed by a
+tilde(~). It has no return value and takes no parameters. Because it takes no
+parameters, it cannot be overloaded. There is always only one destructor for a
+given class. In a destructor, the function body is executed first and then the
+members are destroyed.
+    class Foo {
+    public:
+        ~Foo();  // destructor
+	// ...
+    };
+
+The compiler defines a synthesized destructor for any class that does not define
+its own destructor. For some classes, the synthesized destructor is defined to
+disallow objects of the type from being destroyed. Otherwise, the synthesized
+destructor has an empty function body.
+It is important to realize that the destructor body does not directly destroy
+the members themselves. Members are destroyed as part of the implicit
+destruction phase that follows the destructor body. A destructor body executes
+in addition to the memberwise destruction that takes place as part of destroying
+an object.
