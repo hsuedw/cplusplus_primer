@@ -55,7 +55,7 @@ HasPtr& HasPtr::operator=(const HasPtr &rhs) {
 #endif
 
 #if 0
-// This implementation is wrong. We need to copyt the 
+// This implementation is wrong. We need to copy the 
 // data from rhs first. Then, update the lhs.
 HasPtr& HasPtr::operator=(const string &s) {
     *ps = s;
