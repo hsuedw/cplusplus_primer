@@ -12,7 +12,7 @@ Which of the following initializations are legal? Eplain why.
     The initialization for r is legal. Because r is a const reference which refers to an int object, it can refer to a literal.
 
 (d) const int *const p3 = &i2;
-    p3 is a const pointer which points to the const int object when p3 is initialized. If i2 is a const int object, this initialization is legal.
+    p3 is a const pointer which points to the const int object when p3 is initialized. If i2 is an object of type int, this initialization is legal.
 
 (e) const int *p1 = &i2;
     p1 is a pointer which points to a const int object. If i2 is a const int object, this initialization is legal.
