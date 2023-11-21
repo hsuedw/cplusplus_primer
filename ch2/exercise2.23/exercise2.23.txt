@@ -1,5 +1,5 @@
 
 What happens when we use an uninitialized pointer is undefined. Using an uninitialized pointer almost always results in a run-time crush.
-Under most compilers, when we use an uninitialized pinter, the bits in the memory in which the pointer resides are used as an address. Using an uninitialized pinter is a request to access a supposed object that supposed locatoin. There is no way to distinguish a valid address from an invalid one formed from the bits that happen to be in the memory in which the pointer was allocated.
-Define a pointer only after the object to which it should point has been defined. If there is no object to bind to a pointer, then initialize the pointer to nullptr. Thta way, the probram can detect the pointer does not point to an object.
+Under most compilers, when we use an uninitialized pinter, the bits in the memory in which the pointer resides are used as an address. Using an uninitialized pinter is a request to access a supposed object that supposed location. There is no way to distinguish a valid address from an invalid one formed from the bits that happen to be in the memory in which the pointer was allocated.
+Define a pointer only after the object to which it should point has been defined. If there is no object to bind to a pointer, then initialize the pointer to nullptr. That way, the problem can detect the pointer does not point to an object.
 

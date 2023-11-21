@@ -1,0 +1,5 @@
+Why did we use postfix increment in the call to construct inside push_back? What would happen if it used the prefix increment?
+
+Because first_free is the pointer refers to the first free element, we can construct the new string object in the memory referred by first_free. Once the construction finished, first_free has to be moved and refers to the next element which is available for constructing the next new string object.
+
+If we use prefix increment, the new string object will be construct to the next element instead of the element referred by first_free. Therefore, every newly added element has a raw element before it.
