@@ -15,12 +15,11 @@ Which of the following initializations are legal? Eplain why.
     p3 is a const pointer which points to the const int object when p3 is initialized. If i2 is an object of type int, this initialization is legal.
 
 (e) const int *p1 = &i2;
-    p1 is a pointer which points to a const int object. If i2 is a const int object, this initialization is legal.
-    However, p1 can point to different const int objects.
+    p1 is a pointer which points to a const int object. If i2 is an object of type int, this initialization is legal.
 
 (f) const int &const r2;
-    r2 is a reference. A reference is not an object, so it doesn't make sense that modify it as const.
+    This is illegal. r2 is a reference so it must be initialized.
 
 (g) const int i2 = i, &r = i;
     i2 is a const int object. If i is an int object, it is legal to use the value of i to initialize i2.
-    r is const reference which referes to an int object. If i is an int object, it is a legal initialization.
+    r is const reference which referes to an int object. Because i is an int object, this initialization is legal.
