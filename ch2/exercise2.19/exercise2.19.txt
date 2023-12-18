@@ -1,4 +1,5 @@
-A pointer is an object, while a reference is not an object.
+A pointer is an object, while a reference is not an object. A reference is an
+alias for an existing object.
 Unlike a reference, a pointer is an object. Pointers can be assigned and copied.
 A single pointer can point to several different objects over its lifetime.
 Unlike a reference, a pointer need not be initialized at the time it is defined.
