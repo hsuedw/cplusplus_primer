@@ -20,7 +20,7 @@ of the copy constructor in this program fragment:
 	// constructor will be called.
 	Point pa[ 4 ] = { loca, *heap };
 
-	// The return type is a nonrefence to Point, sot the copy constructor
+	// The return type is a nonrefence to Point, so the copy constructor
 	// will be called.
 	return *heap;
     }
