@@ -7,8 +7,14 @@ public:
         ps(new std::string(s)), i(0) {}
 
     // copy constructor
-    HasPtr(const HasPtr &rhs) :
-    ps(new std::string(*rhs.ps)), i(rhs.i) {}
+    HasPtr(const HasPtr &rhs) : i(rhs.i) {
+        ps = new std::string();
+
+	int n = rhs.ps->size();
+	for (int i = 0; i < n; ++i) {
+	    ps->push_back(rhs.ps->at(i));
+        }
+    }
 
     std::string get() { return *ps; }
     void set(const std::string &s) { *ps = s; }
