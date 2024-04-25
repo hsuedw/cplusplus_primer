@@ -28,8 +28,11 @@ int main() {
 // After the program finishes, the destructor, ~X(), of obj will be invoked.
 
 // The following message will be shown in text console.
-// X()
-// X(const X&)
-// void foo(X &parm)
-// ~X()
-// ~X()
+//X()
+//-------- foo begin
+//X(const X&)
+//void foo(X &parm)
+//~X()
+//-------- foo end
+//~X()
+
