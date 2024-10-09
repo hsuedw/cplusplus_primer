@@ -1,0 +1,14 @@
+Distinguish between an rvalue reference and an lvalue reference.
+
+An rvalue reference is a reference that must be bound to an rvalue. An rvalue reference is obtained by using && rather than &. An rvalue reference have the important property that they may be bound only to an object that is about to be destroyed. As a result, we are free to "move" resources from an rvalue referenct to another object.
+
+We cannot bind an lvalue reference to an expression that requires a conversion, to a literal, or to an expression that returns an rvalue. Rvalue references have the opposit binding properties: We can bind an r value reference to these kinds of expressions, but we cannot directly bind an rvalue reference to an lvalue.
+
+Functions that return lvalue references, along with the assignment, subscript, dereference, and prefix increment/decrement operators, are all examples of expressions that return lvalues. Wcan bind an lvalue reference t the result of any of these expressions.
+
+Functions that return a nonreference type, along with the arithmetic, relational, bitwise, and postfix increment/decrement operators, all yield rvalues, We cannot bind an lvalue reference to these expressions, but we can bind either an lvalue reference to const or an rvalue reference to such expressions.
+
+Lvalues have persistent state, whereas rvalues are either literals or temporary objects created in the course of evaluating expressions. Becaue rvalue references can only be bound to temporaries, we know that 
+* The referred-to object is about to be destroyed
+* There can be no other users of that object
+These facts together mean that code that uses an rvalue reference is free to take over resourdes from the object to which the reference refers.
